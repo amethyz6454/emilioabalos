@@ -1,0 +1,148 @@
+﻿@use "sass:math";
+@use "sass:map";
+@use "sass:string";
+@use "sass:color";
+
+// String replace function
+@function str-replace($string, $search, $replace: "") {
+    $index: string.index($string, $search);
+
+    @if $index {
+        @return string.slice($string, 1, $index - 1) + $replace +
+            str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// Color contrast
+@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+    $r: color.red(
+        $color: $color,
+    );
+    $g: color.green(
+        $color: $color,
+    );
+    $b: color.blue(
+        $color: $color,
+    );
+
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) * 0.001;
+
+    @return if($yiq >= $yiq-contrasted-threshold, $dark, $light);
+}
+
+// Theme color functions
+@function color($key: "blue") {
+    @return map.get($colors, $key);
+}
+
+@function theme-color($key: "primary") {
+    @return map.get($theme-colors, $key);
+}
+
+@function theme-color-alert($key: "primary") {
+    @return map.get($theme-colors, $key);
+}
+
+@function gray($key: "100") {
+    @return map.get($grays, $key);
+}
+
+// Theme color level
+@function theme-color-level($color-name: "primary", $level: 0) {
+    $color: theme-color-alert($color-name);
+    $color-base: if($level > 0, $black, $white);
+    $level: math.abs($level);
+
+    @return color.mix($color-base, $color, $level * $theme-color-interval);
+}
+
+// Utility to format HSL as a valid CSS string
+@function hsl-string($h, $s, $l) {
+    @return "#{$h}, #{$s}, #{$l}";
+}
+
+// HSL utilities returning valid CSS strings
+@function hexToHSL($hex) {
+    $h: math.floor(
+        color.channel(
+            $color: $hex,
+            $channel: "hue",
+            $space: hsl,
+        )
+    );
+    $s: math.floor(
+        color.channel(
+            $color: $hex,
+            $channel: "saturation",
+            $space: hsl,
+        )
+    );
+    $l: math.floor(
+        color.channel(
+            $color: $hex,
+            $channel: "lightness",
+            $space: hsl,
+        )
+    );
+    @return hsl-string($h, $s, $l);
+}
+
+@function hexToHSLDarken($hex, $darken: 10) {
+    $h: math.floor(
+        color.channel(
+            $color: $hex,
+            $channel: "hue",
+            $space: hsl,
+        )
+    );
+    $s: math.floor(
+        color.channel(
+            $color: $hex,
+            $channel: "saturation",
+            $space: hsl,
+        )
+    );
+    $l: color.channel(
+            $color: $hex,
+            $channel: "lightness",
+            $space: hsl,
+        ) -
+        $darken;
+
+    @if $l < 0% {
+        $l: 0%;
+    }
+
+    @return hsl-string($h, $s, math.floor($l));
+}
+
+@function hexToHSLLighten($hex, $lighten: 10) {
+    $h: math.floor(
+        color.channel(
+            $color: $hex,
+            $channel: "hue",
+            $space: hsl,
+        )
+    );
+    $s: math.floor(
+        color.channel(
+            $color: $hex,
+            $channel: "saturation",
+            $space: hsl,
+        )
+    );
+    $l: color.channel(
+            $color: $hex,
+            $channel: "lightness",
+            $space: hsl,
+        ) +
+        $lighten;
+
+    @if $l > 100% {
+        $l: 100%;
+    }
+
+    @return hsl-string($h, $s, math.floor($l));
+}

@@ -1,0 +1,29 @@
+.nav {
+    display: inline-flex;
+    flex-direction: column;
+    height: var(--spacer-80);
+    width: var(--spacer-80);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--spacer-10);
+    font-weight: 700;
+    transition: linear;
+    transition-duration: 200ms;
+    color: var(--color-mono-950);
+}
+
+.active {
+    --icon-primary-color: var(--color-mono-950);
+
+    background-color: hsla(var(--color-primary-hsl), 1);
+    color: var(--color-mono-50);
+
+    &:hover {
+        background-color: hsla(var(--color-primary-hsl), 0.5);
+    }
+}
+
+.inactive:hover {
+    background-color: hsla(var(--color-mono-950-hsl), 0.1);
+}
