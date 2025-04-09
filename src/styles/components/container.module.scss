@@ -1,0 +1,6 @@
+@use "../mixins/container" as container;
+
+.container {
+    @include container.make-container();
+    @include container.make-container-max-widths();
+}

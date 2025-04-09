@@ -5,29 +5,8 @@
     --color-background: var(--background);
     --color-foreground: var(--foreground);
 
-    --color-gray: oklch(73.734% 0.01467 248.03);
-    --color-gray-50: oklch(98.837% 0.00132 286.38);
-    --color-gray-100: oklch(96.067% 0.00172 247.84);
-    --color-gray-200: oklch(90.525% 0.00523 247.88);
-    --color-gray-300: oklch(85.18% 0.00781 241.68);
-    --color-gray-400: oklch(79.468% 0.01153 243.69);
-    --color-gray-500: oklch(73.734% 0.01467 248.03);
-    --color-gray-600: oklch(64.473% 0.02085 248.15);
-    --color-gray-700: oklch(55.013% 0.02168 248.22);
-    --color-gray-800: oklch(45.179% 0.01736 245);
-    --color-gray-900: oklch(34.86% 0.01192 243.16);
-    --color-gray-950: oklch(29.387% 0.01015 242.03);
-
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
-}
-
-html,
-body,
-body > div {
-    display: flex;
-    height: 100%;
-    flex-grow: 1;
 }
 
 body {

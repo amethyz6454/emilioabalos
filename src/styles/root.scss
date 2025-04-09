@@ -63,4 +63,24 @@
     // icon color
     --icon-primary-color: var(--color-primary);
     --icon-secondary-color: currentcolor;
+
+    // gaps
+    --gap-xs: 2px;
+    --gap-sm: var(--spacer-4);
+    --gap: var(--spacer-8);
+    --gap-md: var(--spacer-12);
+    --gap-lg: var(--spacer-16);
+    --gap-xl: var(--spacer-24);
+    --gap-2xl: var(--spacer-32);
+    --gap-3xl: var(--spacer-48);
+
+    // grid
+    --global-grid-columns-2: 50%;
+    --global-grid-columns-3: 33.333333%;
+    --global-grid-columns-4: 25%;
+
+    --grid-gap: var(--gap);
+    --grid-columns-2: calc(var(--global-grid-columns-2) - var(--grid-gap));
+    --grid-columns-3: calc(var(--global-grid-columns-3) - var(--grid-gap));
+    --grid-columns-4: calc(var(--global-grid-columns-4) - var(--grid-gap));
 }

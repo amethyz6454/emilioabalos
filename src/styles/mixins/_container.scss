@@ -1,0 +1,33 @@
+@use "../core/variables/gutters" as gut;
+@use "../core/variables/media-breakpoint" as med;
+@use "breakpoints";
+@use "sass:math";
+
+@mixin make-container($gutter: gut.$grid-gutter-width) {
+    width: 100%;
+    padding-right: calc($gutter / 2);
+    padding-left: calc($gutter / 2);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin make-container-max-widths($max-widths: med.$container-max-widths, $breakpoints: med.$grid-breakpoints) {
+    @each $breakpoint, $container-max-width in $max-widths {
+        @include breakpoints.media-breakpoint-up($breakpoint, $breakpoints) {
+            max-width: $container-max-width;
+        }
+    }
+}
+
+@mixin make-row($gutter) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc($gutter * -1);
+    row-gap: var(--section-grid-gap);
+}
+
+@mixin make-col($size, $gutter) {
+    flex: 0 0 calc($size - $gutter);
+    max-width: calc($size - $gutter);
+    margin-left: $gutter;
+}

@@ -1,1 +1,12 @@
 @use "../mixins/breakpoints" as mbr;
+
+.wrapper {
+    --sidebar-width: var(--spacer-80);
+    --main-width: calc(100% - var(--sidebar-width));
+}
+
+.main {
+    max-width: var(--main-width);
+    min-width: var(--main-width);
+    flex-basis: var(--main-width);
+}

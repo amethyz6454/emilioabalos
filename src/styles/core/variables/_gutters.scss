@@ -1,0 +1,9 @@
+﻿// SCSS File
+// gutters.scss
+
+// gutters variables
+$gutter-sm-size: var(--spacer-8) !default; // 16px
+$gutter-md-size: var(--spacer-24) !default; // 24px
+$gutter-lg-size: var(--spacer-32) !default; // 32px
+
+$grid-gutter-width: $gutter-sm-size !default;

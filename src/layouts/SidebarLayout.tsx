@@ -6,7 +6,9 @@ import NavigationItem from "./partials/NavigationItem";
 
 const SidebarLayout: React.FC = (): JSX.Element => {
     return (
-        <aside className={classNames("sticky top-0 left-0 flex grow-0 flex-col", SidebarStyles.sidebar)}>
+        <aside
+            className={classNames("sticky top-0 left-0 flex h-dvh min-h-dvh grow-0 flex-col", SidebarStyles.sidebar)}
+        >
             <NavigationItem isActive>
                 <Icon name="Dashboard" />
                 <span>Projects</span>

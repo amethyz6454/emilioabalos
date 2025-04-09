@@ -1,7 +1,8 @@
 @use "../mixins/breakpoints" as mbr;
 
 .sidebar {
-    min-width: var(--spacer-80);
-    flex-basis: var(--spacer-80);
+    max-width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    flex-basis: var(--sidebar-width);
     background-color: var(--color-mono-100);
 }
