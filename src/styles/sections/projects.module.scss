@@ -16,9 +16,25 @@
         --section-grid-size: var(--global-grid-columns-3);
     }
 
-    > * {
+    > .heading {
+        @include breakpoints.media-breakpoint-up(xs) {
+            @include container.make-col(100%, var(--section-grid-gap));
+        }
+    }
+
+    > .items {
+        background-color: var(--white);
+
         @include breakpoints.media-breakpoint-up(xs) {
             @include container.make-col(var(--section-grid-size), var(--section-grid-gap));
         }
+    }
+}
+
+.thumbnails {
+    background-color: hsla(var(--color-mono-50-hsl), 0.25);
+
+    &:hover {
+        opacity: 1;
     }
 }

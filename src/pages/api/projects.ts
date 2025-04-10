@@ -1,4 +1,4 @@
-export const PROJECTS = Object.freeze([
+export const FIGMA_PROJECTS = Object.freeze([
     {
         title: "In-Between",
         thumbnail: "/projects/thumbnails/project-in-between.jpg",
@@ -50,15 +50,46 @@ export const PROJECTS = Object.freeze([
         ],
         prototype:
             "https://www.figma.com/proto/wfy4rtVeTasn9gNiOOW30Z/In-Between-UI-Improvements?node-id=2031-759&starting-point-node-id=2031%3A759",
+        link: null,
+        isFigma: true,
+        isDesign: false,
     },
     {
         title: "Point Of Sale",
         thumbnail: "/projects/thumbnails/project-pos.jpg",
-        overview: "",
-        contribution: "",
-        execution: "",
-        images: [],
-        prototype: "",
+        overview:
+            "The client required a prototype for a restaurant Point of Sale (POS) system, encompassing order management and Human Resource Management (HRM) functionalities. This system was designed for internal use, with a primary focus on horizontal iPad deployment while maintaining vertical mode compatibility. The goal was to create an intuitive and efficient interface that streamlined restaurant operations.",
+        contribution: [
+            "Application Design and Prototyping: Developing the overall design and interactive prototype for the POS system.",
+            "Logo Placeholder: Creating a temporary logo to establish the system's visual identity during the prototyping phase.",
+            "Custom Iconography: Designing a set of custom icons to enhance the system's visual language and user experience.",
+            "Order/Menu Interface Design: Designing an intuitive and efficient interface for order management and menu navigation.",
+            "Employee/Cashier Management: Designing secure employee/cashier login and change interfaces, incorporating PIN authentication.",
+            "HRM Web Application Design: Developing the user interface for the HRM web application, focusing on administrative functionalities.",
+            "General Component Design: Creating a library of reusable UI components to ensure consistency across the POS system.",
+            "Order Line Design: Designing an order line component for real-time order monitoring.",
+        ],
+        execution: [
+            "Simplified Design Philosophy: I adopted a minimalist design approach, prioritizing clarity and ease of use.",
+            "Color Palette and Styling: A purple accent color was integrated to provide visual consistency, complemented by thin borders and rounded edges for a modern aesthetic.",
+            "iPad Optimization: Recognizing the target device, I designed larger, easily tappable buttons while minimizing the size of less frequently used controls to prevent accidental interactions.",
+            "Admin Tool Integration: The HRM web application, or 'Admin Tool,' was designed with a consistent purple color scheme to maintain brand unity across the system.",
+        ],
+        images: [
+            { src: "/projects/pos/app-logo.png", title: "Application Logo" },
+            { src: "/projects/pos/desktop.png", title: "Web Application Admintool" },
+            { src: "/projects/pos/desktop-form.png", title: "Web Application Admintool Form" },
+            { src: "/projects/pos/iPad-horizontal-add-order.png", title: "POS Add Order" },
+            { src: "/projects/pos/iPad-horizontal-employee-clock-in.png", title: "POS Employee Clock-In" },
+            { src: "/projects/pos/iPad-horizontal-manage-shift.png", title: "POS Shift Management" },
+            { src: "/projects/pos/iPad-horizontal-open-food-details-dialog.png", title: "POS Food Details" },
+            { src: "/projects/pos/iPad-horizontal-order-line.png", title: "POS Order Line" },
+        ],
+        prototype:
+            "https://www.figma.com/proto/qds6R9PZzk8TYhIEIpyBz7/POS?node-id=117-11753&t=zWMtvR0grkIDKOuV-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=151%3A7539&show-proto-sidebar=1",
+        link: null,
+        isFigma: true,
+        isDesign: false,
     },
     {
         title: "WorxSnap",
@@ -97,6 +128,28 @@ export const PROJECTS = Object.freeze([
                 title: "Web Application Leave Request Modal",
             },
         ],
-        prototype: "",
+        prototype:
+            "https://www.figma.com/design/IQUmubVABYiEEdp0ab1i80/WorxSnap-Components?node-id=1-2&p=f&t=M8lQ14FJnsGenUr8-0",
+        link: null,
+        isFigma: true,
+        isDesign: false,
+    },
+]);
+
+export const LOGO_PROJECTS = Object.freeze([
+    {
+        title: "Summit Formula",
+        thumbnail: "/projects/summit-formula/logo-summit-formula.jpg",
+        link: null,
+    },
+    {
+        title: "Panalods",
+        thumbnail: "/projects/panalods/logo-panalods.jpg",
+        link: "https://www.panalods.ph/",
+    },
+    {
+        title: "Infiniweb",
+        thumbnail: "/projects/infiniweb/logo-infiniweb.jpg",
+        link: null,
     },
 ]);
