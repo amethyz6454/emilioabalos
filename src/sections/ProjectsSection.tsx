@@ -1,6 +1,5 @@
-import Modal from "@/components/Modal";
 import LinkButtonDiv from "@/components/wrapper/LinkButtonDiv";
-import useProjectStore, { ProjectIdentifier } from "@/library/stores/useProjectStore";
+import useProjectStore, { Project } from "@/library/stores/useProjectStore";
 import ProjectViewModal from "@/modals/ProjectViewModal";
 import { DEV_PROJECTS, FIGMA_PROJECTS, IH_PROJECTS, LOGO_PROJECTS } from "@/pages/api/projects";
 import ProjectsStyles from "@/styles/sections/projects.module.scss";
@@ -12,7 +11,7 @@ const ProjectsSection: React.FC = (): JSX.Element => {
     const { projectModal, selectedProject, closeProjectModal, openProjectModal, setSelectedProject } =
         useProjectStore();
 
-    const handleSelectProject = (project: ProjectIdentifier) => {
+    const handleSelectProject = (project: Project) => {
         setSelectedProject(project);
         openProjectModal();
     };
@@ -22,8 +21,8 @@ const ProjectsSection: React.FC = (): JSX.Element => {
             <h4 className={classNames("pt-4 text-2xl font-bold", ProjectsStyles.heading)}>Figma Prototypes</h4>
             {FIGMA_PROJECTS.map((project, p) => (
                 <LinkButtonDiv
-                    className={classNames("relative cursor-pointer", ProjectsStyles.items)}
                     key={project.title}
+                    className={classNames("relative cursor-pointer", ProjectsStyles.items)}
                     onClick={() => handleSelectProject(project)}
                 >
                     <Image
@@ -38,7 +37,7 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                     {project.isFigma && project.images && (
                         <span
                             className={classNames(
-                                "absolute inset-0 grid place-items-center opacity-0 backdrop-blur-xl transition-all",
+                                "sm-block absolute inset-0 grid hidden place-items-center opacity-0 backdrop-blur-xl transition-all",
                                 ProjectsStyles.thumbnails
                             )}
                         >
@@ -55,13 +54,12 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                 </LinkButtonDiv>
             ))}
 
-            <h4 className={classNames("pt-4 text-2xl font-bold", ProjectsStyles.heading)}>Branding</h4>
+            <h4 className={classNames("pt-4 text-2xl font-bold", ProjectsStyles.heading)}>Logo</h4>
             {LOGO_PROJECTS.map((project, p) => (
                 <LinkButtonDiv
-                    className={classNames("relative", ProjectsStyles.items)}
                     key={project.title}
-                    link={project.link}
-                    target={project.link ? "_black" : undefined}
+                    className={classNames("relative cursor-pointer", ProjectsStyles.items)}
+                    onClick={() => handleSelectProject(project)}
                 >
                     <Image
                         alt={project.title}
@@ -88,10 +86,9 @@ const ProjectsSection: React.FC = (): JSX.Element => {
             </h4>
             {DEV_PROJECTS.map((project, p) => (
                 <LinkButtonDiv
-                    className={classNames("relative", ProjectsStyles.items)}
                     key={project.title}
-                    link={project.link}
-                    target={project.link ? "_black" : undefined}
+                    className={classNames("relative cursor-pointer", ProjectsStyles.items)}
+                    onClick={() => handleSelectProject(project)}
                 >
                     <Image
                         alt={project.title}

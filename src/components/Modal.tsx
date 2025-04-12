@@ -65,7 +65,7 @@ const Modal: React.FC<ModalProps> = ({
         <Fragment>
             <div
                 className={classNames(
-                    "fixed top-0 left-0 z-50 h-full w-full text-center transition duration-150 ease-in-out",
+                    "fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto text-center transition duration-150 ease-in-out",
                     { "pointer-events-auto scale-100": isOpen },
                     { "pointer-events-none scale-0": !isOpen },
                     ModalStyles["modal-outer"]
@@ -74,11 +74,14 @@ const Modal: React.FC<ModalProps> = ({
             >
                 <div
                     ref={modalRef}
-                    className="relative inline-block max-h-full max-w-[80%] min-w-96 text-left align-middle"
+                    className="relative inline-block max-h-full min-w-96 text-left align-middle sm:max-w-[50%]"
                 >
-                    <div ref={modalRef} className="relative flex flex-col gap-2 bg-white p-8 shadow-lg">
+                    <div
+                        ref={modalRef}
+                        className="relative flex max-h-full flex-col gap-2 bg-white p-2 shadow-lg sm:p-8"
+                    >
                         {isHeaderShown && (
-                            <div className="flex grow-0 items-center gap-4">
+                            <div className="flex grow-0 basis-auto items-center gap-2">
                                 <h4 className="grow text-xl">{title}</h4>
                                 <button
                                     type="button"
@@ -89,9 +92,9 @@ const Modal: React.FC<ModalProps> = ({
                                 </button>
                             </div>
                         )}
-                        <div className="grow">{children}</div>
+                        <div className="grow basis-full">{children}</div>
                         {isFooterShown && (
-                            <div className="flex grow-0 gap-2">
+                            <div className="flex grow-0 basis-auto gap-2">
                                 {isFooterCloseButtonShow && (
                                     <Button variant="text" size="large" isFullWidth onClick={onClose}>
                                         Close
@@ -104,9 +107,9 @@ const Modal: React.FC<ModalProps> = ({
             </div>
             <div
                 className={classNames(
-                    "fixed inset-0 bg-black/50 transition duration-150 ease-in-out",
-                    { "pointer-events-auto z-40 opacity-100": isOpen },
-                    { "pointer-events-none -z-1 opacity-0": !isOpen }
+                    "fixed inset-0 z-40 bg-black/50 transition duration-150 ease-in-out",
+                    { "pointer-events-auto opacity-100": isOpen },
+                    { "pointer-events-none opacity-0": !isOpen }
                 )}
             />
         </Fragment>

@@ -80,19 +80,19 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
 
     const buttonComposition = {
         default: {
-            small: "px-3 h-6 rounded",
-            medium: "px-5 h-9 rounded",
-            large: "px-6 h-12 rounded",
+            small: "px-3 h-6",
+            medium: "px-5 h-9",
+            large: "px-6 h-12",
         },
         square: {
-            small: "h-6 w-6 rounded",
-            medium: "h-10 w-10 rounded",
-            large: "h-14 w-14 rounded",
+            small: "h-6 w-6",
+            medium: "h-10 w-10",
+            large: "h-14 w-14",
         },
         circle: {
-            small: "h-6 w-6 rounded-full",
-            medium: "h-9 w-9 rounded-full",
-            large: "h-12 w-12 rounded-full",
+            small: "h-6 w-6",
+            medium: "h-9 w-9",
+            large: "h-12 w-12",
         },
     };
 

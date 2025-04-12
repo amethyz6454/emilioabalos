@@ -1,8 +1,17 @@
 import { create } from "zustand";
 
-export interface ProjectIdentifier {
+export interface Project {
     id: string;
     title: string;
+    contribution?: string[];
+    execution?: string[];
+    images?: { src: string; title: string }[];
+    isDesign?: boolean;
+    isFigma?: boolean;
+    link?: string | null;
+    overview?: string;
+    prototype?: string;
+    thumbnail?: string;
 }
 
 interface ProjectModalState {
@@ -11,10 +20,10 @@ interface ProjectModalState {
 
 interface ProjectStore {
     projectModal: ProjectModalState;
-    selectedProject: ProjectIdentifier | null;
+    selectedProject: Project | null;
     closeProjectModal: () => void;
     openProjectModal: () => void;
-    setSelectedProject: (project: ProjectIdentifier | null) => void;
+    setSelectedProject: (project: Project | null) => void;
 }
 
 const useProjectStore = create<ProjectStore>((set) => ({
