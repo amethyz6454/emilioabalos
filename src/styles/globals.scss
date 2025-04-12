@@ -7,6 +7,45 @@
 
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+
+    --color-primary: var(--color-primary);
+    --color-primary-50: oklch(93.219% 0.03432 17.784);
+    --color-primary-100: oklch(86.891% 0.07024 18.599);
+    --color-primary-200: oklch(75.286% 0.14858 21.216);
+    --color-primary-300: oklch(66.658% 0.22037 25.498);
+    --color-primary-400: oklch(62.994% 0.25566 28.988);
+    --color-primary-500: var(--color-primary);
+    --color-primary-600: oklch(45.941% 0.18852 29.234);
+    --color-primary-700: oklch(38.726% 0.15892 29.234);
+    --color-primary-800: oklch(30.934% 0.12694 29.234);
+    --color-primary-900: oklch(22.608% 0.09277 29.234);
+    --color-primary-950: oklch(18.153% 0.07449 29.234);
+
+    --color-secondary: var(--color-secondary);
+    --color-secondary-50: oklch(93.695% 0.02677 230.35);
+    --color-secondary-100: oklch(90.612% 0.04101 228.65);
+    --color-secondary-200: oklch(84.156% 0.06885 230.68);
+    --color-secondary-300: oklch(78.14% 0.09503 231.48);
+    --color-secondary-400: oklch(72.461% 0.11794 233.29);
+    --color-secondary-500: oklch(67.022% 0.13615 237.26);
+    --color-secondary-600: oklch(58.511% 0.11906 236.85);
+    --color-secondary-700: oklch(49.137% 0.09954 237.34);
+    --color-secondary-800: oklch(39.504% 0.07704 236.11);
+    --color-secondary-900: oklch(28.967% 0.05334 235.66);
+    --color-secondary-950: var(--color-secondary);
+
+    --color-tertiary: var(--color-tertiary);
+    --color-tertiary-50: oklch(96.448% 0.0485 91.752);
+    --color-tertiary-100: oklch(94.779% 0.07066 91.525);
+    --color-tertiary-200: oklch(91.617% 0.1116 91.036);
+    --color-tertiary-300: oklch(88.705% 0.14472 89.894);
+    --color-tertiary-400: oklch(86.247% 0.16588 87.971);
+    --color-tertiary-500: var(--color-tertiary);
+    --color-tertiary-600: oklch(70.997% 0.14572 83.994);
+    --color-tertiary-700: oklch(57.541% 0.11798 84.667);
+    --color-tertiary-800: oklch(43.238% 0.08852 85.92);
+    --color-tertiary-900: oklch(27.608% 0.05642 89.069);
+    --color-tertiary-950: oklch(19.011% 0.03889 92.204);
 }
 
 body {

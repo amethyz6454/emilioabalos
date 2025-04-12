@@ -2,12 +2,15 @@ import dynamic from "next/dynamic";
 import React, { JSX } from "react";
 import { IconCommonProps } from "./icons/svg/IconContainer";
 
-export type IconNames = "Dashboard" | "UserSquare" | "Work";
+export type IconNames = "Close" | "Dashboard" | "UserSquare" | "Work";
 
 interface IconProps extends IconCommonProps {
     name: IconNames;
 }
 
+const DynamicIconClose = dynamic(() =>
+    import("@/components/icons/IconClose").then((mod) => mod.default)
+) as React.FC<IconCommonProps>;
 const DynamicIconDashboard = dynamic(() =>
     import("@/components/icons/IconDashboard").then((mod) => mod.default)
 ) as React.FC<IconCommonProps>;
@@ -26,6 +29,7 @@ const IconRenders = ({ size, colorPrimary, colorSecondary }: IconCommonProps): R
     };
 
     return {
+        Close: <DynamicIconClose {...populateProps} />,
         Dashboard: <DynamicIconDashboard {...populateProps} />,
         UserSquare: <DynamicIconUserSquare {...populateProps} />,
         Work: <DynamicIconWork {...populateProps} />,

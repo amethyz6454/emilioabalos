@@ -3,7 +3,7 @@
 
 .section {
     --section-grid-gap: var(--gap-sm);
-    --section-grid-size: 100%;
+    --section-grid-size: 50%;
 
     padding-top: var(--section-grid-gap);
     padding-bottom: var(--section-grid-gap);
@@ -13,7 +13,7 @@
 
     @include breakpoints.media-breakpoint-up(sm) {
         --section-grid-gap: var(--gap-xl);
-        --section-grid-size: var(--global-grid-columns-3);
+        --section-grid-size: var(--global-grid-columns-4);
     }
 
     > .heading {

@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { forwardRef, ReactNode } from "react";
 
-type ButtonVariant = "contained" | "outlined" | "ghost" | "text";
-type ButtonColor = "primary" | "secondary" | "tertiary";
-type ButtonSize = "small" | "medium" | "large";
-type ButtonComposition = "default" | "square" | "circle";
+export type ButtonVariant = "contained" | "outlined" | "ghost" | "text";
+export type ButtonColor = "primary" | "secondary" | "tertiary";
+export type ButtonSize = "small" | "medium" | "large";
+export type ButtonComposition = "default" | "square" | "circle";
 
 interface BaseProps {
     children: ReactNode;
@@ -12,6 +12,7 @@ interface BaseProps {
     color?: ButtonColor;
     composition?: ButtonComposition;
     disabled?: boolean;
+    isFullWidth?: boolean;
     size?: ButtonSize;
     variant?: ButtonVariant;
 }
@@ -36,6 +37,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
         composition = "default",
         disabled,
         href,
+        isFullWidth = false,
         size = "medium",
         variant = "contained",
         ...rest
@@ -44,35 +46,35 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
     const buttonVariant = {
         contained: {
             primary:
-                "border-primary bg-primary text-white hover:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:ring-primary-500 active:bg-primary-500",
+                "border-primary bg-primary text-white hover:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:ring-primary active:bg-primary",
             secondary:
-                "border-secondary bg-secondary text-white hover:border-secondary-300 hover:bg-secondary-300 hover:text-black focus:bg-secondary-300 focus:ring-secondary-500 active:bg-secondary-500",
+                "border-secondary bg-secondary text-white hover:border-secondary-800 hover:bg-secondary-800 hover:text-white focus:bg-secondary-300 focus:ring-secondary active:bg-secondary",
             tertiary:
-                "border-tertiary bg-tertiary text-white hover:border-tertiary-300 hover:bg-tertiary-300 hover:text-black focus:bg-tertiary-300 focus:ring-tertiary-500 active:bg-tertiary-500",
+                "border-tertiary bg-tertiary text-secondary hover:border-tertiary-300 hover:bg-tertiary-300 hover:text-secondary focus:bg-tertiary-300 focus:ring-tertiary active:bg-tertiary",
         },
         outlined: {
             primary:
-                "border-primary bg-transparent text-primary hover:bg-primary hover:text-white focus:bg-primary focus:ring-primary active:bg-primary-500",
+                "border-primary bg-transparent text-primary hover:bg-primary hover:text-white focus:bg-primary focus:ring-primary active:bg-primary",
             secondary:
-                "border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-white focus:bg-secondary focus:ring-secondary active:bg-secondary-500",
+                "border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-white focus:bg-secondary focus:ring-secondary active:bg-secondary",
             tertiary:
-                "border-tertiary bg-transparent text-tertiary hover:bg-tertiary hover:text-white focus:bg-tertiary focus:ring-tertiary active:bg-tertiary-500",
+                "border-tertiary bg-transparent text-tertiary hover:bg-tertiary hover:text-white focus:bg-tertiary focus:ring-tertiary active:bg-tertiary",
         },
         ghost: {
             primary:
-                "border-primary border-opacity-35 bg-primary bg-opacity-35 text-white hover:border-primary-300 hover:bg-primary-300 focus:bg-primary-300 focus:ring-primary-500 active:bg-primary-500",
+                "border-transparent bg-primary/35 text-secondary hover:text-white hover:border-primary hover:bg-primary focus:bg-primary-600 focus:ring-primary active:bg-primary",
             secondary:
-                "border-secondary border-opacity-35 bg-secondary bg-opacity-35 text-white hover:border-secondary-300 hover:bg-secondary-300 hover:text-black focus:bg-secondary-300 focus:ring-secondary-500 active:bg-secondary-500",
+                "border-transparent bg-secondary/35 text-secondary hover:text-white hover:border-secondary hover:bg-secondary focus:bg-secondary focus:ring-secondary active:bg-secondary",
             tertiary:
-                "border-tertiary border-opacity-35 bg-tertiary bg-opacity-35 text-white hover:border-tertiary-300 hover:bg-tertiary-300 hover:text-black focus:bg-tertiary-300 focus:ring-tertiary-500 active:bg-tertiary-500",
+                "border-transparent bg-tertiary/35 text-secondary hover:text-secondary hover:border-tertiary hover:bg-tertiary focus:bg-tertiary focus:ring-tertiary active:bg-tertiary",
         },
         text: {
             primary:
-                "border-transparent bg-transparent text-primary-300 hover:text-primary-200 focus:text-primary-200 focus:ring-primary active:text-primary",
+                "border-transparent bg-transparent text-primary hover:text-primary-400 focus:text-primary-400 focus:ring-primary active:text-primary",
             secondary:
-                "border-transparent bg-transparent text-secondary-300 hover:text-secondary-200 focus:text-secondary-200 focus:ring-secondary-500 active:text-secondary",
+                "border-transparent bg-transparent text-secondary hover:text-secondary-800 focus:text-secondary-800 focus:ring-secondary active:text-secondary",
             tertiary:
-                "border-transparent bg-transparent text-tertiary-300 hover:text-tertiary-200 focus:text-tertiary-200 focus:ring-tertiary active:text-tertiary",
+                "border-transparent bg-transparent text-tertiary hover:text-tertiary-400 focus:text-tertiary-400 focus:ring-tertiary active:text-tertiary",
         },
     };
 
@@ -95,9 +97,10 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
     };
 
     const commonClasses = classNames(
-        "inline-flex items-center justify-center border border-solid text-xs font-semibold uppercase tracking-widest transition duration-150 ease-in-out focus:outline-none focus:ring-1 focus:ring-offset-1",
+        "inline-flex items-center justify-center border-2 border-solid text-xs font-semibold uppercase tracking-widest transition duration-150 ease-in-out focus:outline-none focus:ring-1 focus:ring-offset-1 cursor-pointer",
         buttonVariant[variant][color],
         buttonComposition[composition][size],
+        { "w-full": isFullWidth },
         { "pointer-events-none opacity-25": disabled },
         className
     );

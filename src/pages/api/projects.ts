@@ -1,5 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const FIGMA_PROJECTS = Object.freeze([
     {
+        id: uuidv4(),
         title: "In-Between",
         thumbnail: "/projects/thumbnails/project-in-between.jpg",
         overview:
@@ -55,6 +58,7 @@ export const FIGMA_PROJECTS = Object.freeze([
         isDesign: false,
     },
     {
+        id: uuidv4(),
         title: "Point Of Sale",
         thumbnail: "/projects/thumbnails/project-pos.jpg",
         overview:
@@ -92,6 +96,7 @@ export const FIGMA_PROJECTS = Object.freeze([
         isDesign: false,
     },
     {
+        id: uuidv4(),
         title: "WorxSnap",
         thumbnail: "/projects/thumbnails/project-worxsnap.jpg",
         overview:
@@ -138,18 +143,81 @@ export const FIGMA_PROJECTS = Object.freeze([
 
 export const LOGO_PROJECTS = Object.freeze([
     {
-        title: "Summit Formula",
-        thumbnail: "/projects/summit-formula/logo-summit-formula.jpg",
-        link: null,
+        id: uuidv4(),
+        title: "Crescente",
+        thumbnail: "/projects/logos/logo-crescente.jpg",
+        link: "https://secure.crescente.net/",
     },
     {
+        id: uuidv4(),
+        title: "Summit Formula",
+        thumbnail: "/projects/logos/logo-summit-formula.jpg",
+        link: "https://summit-formula.com/",
+    },
+    {
+        id: uuidv4(),
         title: "Panalods",
-        thumbnail: "/projects/panalods/logo-panalods.jpg",
+        thumbnail: "/projects/logos/logo-panalods.jpg",
         link: "https://www.panalods.ph/",
     },
     {
+        id: uuidv4(),
         title: "Infiniweb",
-        thumbnail: "/projects/infiniweb/logo-infiniweb.jpg",
+        thumbnail: "/projects/logos/logo-infiniweb.jpg",
         link: null,
+    },
+]);
+
+export const DEV_PROJECTS = Object.freeze([
+    {
+        id: uuidv4(),
+        title: "Panalods",
+        thumbnail: "/projects/wd-fed/wd-fed-panalods.jpg",
+        link: "https://www.panalods.ph/",
+    },
+    {
+        id: uuidv4(),
+        title: "Crescente",
+        thumbnail: "/projects/wd-fed/wd-fed-crescente.jpg",
+        link: "https://secure.crescente.net/",
+    },
+    {
+        id: uuidv4(),
+        title: "Orchard Road",
+        thumbnail: "/projects/wd-fed/wd-fed-orchard-road.jpg",
+        link: "https://greenyellow-moose-936833.hostingersite.com/",
+    },
+    {
+        id: uuidv4(),
+        title: "Yes We Fulfill",
+        thumbnail: "/projects/wd-fed/wd-fed-yes-we-fulfill.jpg",
+        link: "https://app.yeswefulfill.com/",
+    },
+]);
+
+export const IH_PROJECTS = Object.freeze([
+    {
+        id: uuidv4(),
+        title: "Admintool",
+        thumbnail: "/projects/idle-hand/ih-admin-tool.jpg",
+        link: "https://admintool-mocha.vercel.app/",
+    },
+    {
+        id: uuidv4(),
+        title: "Calendar",
+        thumbnail: "/projects/idle-hand/ih-calendar.jpg",
+        link: "https://codepen.io/milhamethyz/pen/BadXrZX",
+    },
+    {
+        id: uuidv4(),
+        title: "Gauge and Bar Rating",
+        thumbnail: "/projects/idle-hand/ih-gauge-and-bar-rating.jpg",
+        link: "https://codepen.io/milhamethyz/pen/yLYeXNo",
+    },
+    {
+        id: uuidv4(),
+        title: "Icons Using Pseudo Element",
+        thumbnail: "/projects/idle-hand/ih-pseudo-element-icons.jpg",
+        link: "https://codepen.io/milhamethyz/pen/MWgQLdv",
     },
 ]);
