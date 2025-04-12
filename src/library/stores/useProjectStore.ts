@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export interface ProjectIdent {
+export interface ProjectIdentifier {
     id: string;
     title: string;
 }
@@ -11,10 +11,10 @@ interface ProjectModalState {
 
 interface ProjectStore {
     projectModal: ProjectModalState;
-    selectedProject: ProjectIdent | null;
+    selectedProject: ProjectIdentifier | null;
     closeProjectModal: () => void;
     openProjectModal: () => void;
-    setSelectedProject: (project: ProjectIdent | null) => void;
+    setSelectedProject: (project: ProjectIdentifier | null) => void;
 }
 
 const useProjectStore = create<ProjectStore>((set) => ({

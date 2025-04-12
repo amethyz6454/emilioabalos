@@ -1,6 +1,6 @@
 import Modal from "@/components/Modal";
 import LinkButtonDiv from "@/components/wrapper/LinkButtonDiv";
-import useProjectStore, { ProjectIdent } from "@/library/stores/useProjectStore";
+import useProjectStore, { ProjectIdentifier } from "@/library/stores/useProjectStore";
 import ProjectViewModal from "@/modals/ProjectViewModal";
 import { DEV_PROJECTS, FIGMA_PROJECTS, IH_PROJECTS, LOGO_PROJECTS } from "@/pages/api/projects";
 import ProjectsStyles from "@/styles/sections/projects.module.scss";
@@ -12,7 +12,7 @@ const ProjectsSection: React.FC = (): JSX.Element => {
     const { projectModal, selectedProject, closeProjectModal, openProjectModal, setSelectedProject } =
         useProjectStore();
 
-    const handleSelectProject = (project: ProjectIdent) => {
+    const handleSelectProject = (project: ProjectIdentifier) => {
         setSelectedProject(project);
         openProjectModal();
     };
