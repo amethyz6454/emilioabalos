@@ -6,7 +6,7 @@ import { JSX } from "react";
 
 const Home: NextPage = (): JSX.Element => {
     return (
-        <MainLayout title="Emilio Abalos">
+        <MainLayout title={process.env.NEXT_PUBLIC_APP_NAME as string}>
             <HeroSection />
             <ProjectsSection />
         </MainLayout>
