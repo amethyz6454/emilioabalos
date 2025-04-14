@@ -28,6 +28,11 @@
         @include container.make-col(var(--section-grid-size), var(--section-grid-gap));
     }
 
+    img {
+        width: 100%;
+        height: auto;
+    }
+
     &:hover {
         .details {
             transform: translateY(-100%);
