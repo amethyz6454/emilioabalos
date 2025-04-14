@@ -29,13 +29,14 @@ const AboutSection: React.FC = (): JSX.Element => {
                             <span>Thats Me!</span>
                         </h1>
                         <p className="text-sm/5 font-light">
-                            My name is {process.env.NEXT_PUBLIC_APP_NAME as string}, a Web Designer and Front-End
-                            Developer based in General Trias, Cavite, Philippines. With over 15 years of experience, I
-                            specialize in graphic design, logo creation, iconography, prototyping, custom UI frameworks,
-                            and WordPress. I&apos;m passionate about staying current with design and development trends,
-                            delivering forward-thinking and user-centric digital experiences.
+                            My name is <strong>{process.env.NEXT_PUBLIC_APP_NAME as string}</strong>, a{" "}
+                            <strong>Web Designer</strong> and <strong>Front-End Developer</strong> based in General
+                            Trias, Cavite, Philippines. With over 15 years of experience, I specialize in graphic
+                            design, logo creation, iconography, prototyping, custom UI frameworks, and WordPress.
+                            I&apos;m passionate about staying current with design and development trends, delivering
+                            forward-thinking and user-centric digital experiences.
                         </p>
-                        <p className="text-sm/5 font-light">
+                        {/* <p className="text-sm/5 font-light">
                             My name is <strong>{process.env.NEXT_PUBLIC_APP_NAME as string}</strong>, a{" "}
                             <strong>Web Designer</strong> and <strong>Front-End Developer</strong> based in General
                             Trias, Cavite, Philippines. With over 15 years of experience, I specialize in a diverse
@@ -49,7 +50,7 @@ const AboutSection: React.FC = (): JSX.Element => {
                             trends. This commitment to continuous learning allows me to deliver forward-thinking and
                             user-centric solutions. I believe in the power of innovative design to create impactful
                             online experiences that not only meet client objectives but also exceed user expectations.
-                        </p>
+                        </p> */}
 
                         <hr />
 
