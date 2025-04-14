@@ -14,7 +14,7 @@ export default function Document() {
                     property="og:description"
                     content="Emilio Abalos's portfolio showcasing web design and front-end development projects. View my work and contact me for collaborations."
                 />
-                <meta property="og:image" content="/home-thumbnail.jpg" />
+                <meta property="og:image" content="/thumbnail.jpg" />
                 <meta property="og:url" content="https://emilioabalos.vercel.app/" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
@@ -23,7 +23,7 @@ export default function Document() {
                     name="twitter:description"
                     content="Emilio Abalos's portfolio showcasing web design and front-end development projects. View my work and contact me for collaborations."
                 />
-                <meta name="twitter:image" content="/home-thumbnail.jpg" />
+                <meta name="twitter:image" content="/thumbnail.jpg" />
                 <link rel="icon" href="/app-logo.png" as="image" />
                 <style>
                     {`#appLoader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #2a2b33; z-index: 9999; } .loader-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: grid; place-items: center; }`}
