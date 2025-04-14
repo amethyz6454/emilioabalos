@@ -2,7 +2,8 @@ import MainStyles from "@/styles/layouts/main.module.scss";
 import classNames from "classnames";
 import Head from "next/head";
 import React, { JSX } from "react";
-import SidebarLayout from "./SidebarLayout";
+import FooterLayout from "./FooterLayout";
+import HeaderLayout from "./HeaderLayout";
 
 interface MainLayoutProps {
     title: string;
@@ -16,8 +17,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }): JSX.Element
                 <title>{title}</title>
             </Head>
             <div className={classNames("flex grow", MainStyles.wrapper)}>
-                <SidebarLayout />
-                <main className={classNames("flex grow flex-col", MainStyles.main)}>{children}</main>
+                <main className={classNames("relative z-29 flex grow flex-col", MainStyles.main)}>
+                    <HeaderLayout />
+                    {children}
+                    <FooterLayout />
+                </main>
             </div>
         </React.Fragment>
     );

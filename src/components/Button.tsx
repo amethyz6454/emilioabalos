@@ -87,12 +87,12 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
         square: {
             small: "h-6 w-6",
             medium: "h-10 w-10",
-            large: "h-14 w-14",
+            large: "h-12 w-12",
         },
         circle: {
-            small: "h-6 w-6",
-            medium: "h-9 w-9",
-            large: "h-12 w-12",
+            small: "h-6 w-6 rounded-full",
+            medium: "h-10 w-10 rounded-full",
+            large: "h-12 w-12 rounded-full",
         },
     };
 

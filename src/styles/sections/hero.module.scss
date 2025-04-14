@@ -1,12 +1,22 @@
+@use "../mixins/breakpoints" as breakpoints;
+
 .section {
     background-color: var(--color-mono-950);
     color: var(--color-mono-50);
 }
 
 .title {
-    font-size: var(--spacer-96);
+    font-size: var(--spacer-48);
+
+    @include breakpoints.media-breakpoint-up(sm) {
+        font-size: var(--spacer-96);
+    }
 }
 
 .subtitle {
-    font-size: var(--spacer-48);
+    font-size: var(--spacer-24);
+
+    @include breakpoints.media-breakpoint-up(sm) {
+        font-size: var(--spacer-48);
+    }
 }

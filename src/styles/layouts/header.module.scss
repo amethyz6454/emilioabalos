@@ -1,0 +1,8 @@
+@use "../mixins/breakpoints" as breakpoints;
+
+.header {
+    --icon-primary-color: var(--color-mono-950);
+
+    background-color: var(--white);
+    color: var(--color-mono-950);
+}

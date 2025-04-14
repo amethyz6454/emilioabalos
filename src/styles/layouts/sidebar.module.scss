@@ -1,4 +1,4 @@
-@use "../mixins/breakpoints" as mbr;
+@use "../mixins/breakpoints" as breakpoints;
 
 .sidebar {
     max-width: var(--sidebar-width);

@@ -1,0 +1,28 @@
+@use "../mixins/container" as container;
+@use "../mixins/breakpoints" as breakpoints;
+
+.about {
+    color: var(--color-mono-950);
+}
+
+.grid {
+    --section-grid-gap: var(--gap-sm);
+    --section-grid-size: 100%;
+
+    row-gap: var(--spacer-16);
+
+    @include container.make-row(var(--section-grid-gap), null);
+
+    @include breakpoints.media-breakpoint-up(sm) {
+        --section-grid-gap: var(--gap-xl);
+        --section-grid-size: var(--global-grid-columns-2);
+
+        row-gap: var(--section-grid-gap);
+    }
+
+    > * {
+        @include breakpoints.media-breakpoint-up(xs) {
+            @include container.make-col(var(--section-grid-size), var(--section-grid-gap));
+        }
+    }
+}

@@ -2,20 +2,41 @@ import dynamic from "next/dynamic";
 import React, { JSX } from "react";
 import { IconCommonProps } from "./icons/svg/IconContainer";
 
-export type IconNames = "Close" | "Dashboard" | "LinkedIn" | "UserSquare" | "Work";
+export type IconNames =
+    | "ArrowSquareDown"
+    | "ArrowSquareLeft"
+    | "Close"
+    | "Dashboard"
+    | "Envelope"
+    | "LinkedIn"
+    | "Menu"
+    | "UserSquare"
+    | "Work";
 
 interface IconProps extends IconCommonProps {
     name: IconNames;
 }
 
+const DynamicIconArrowSquareDown = dynamic(() =>
+    import("@/components/icons/IconArrowSquareDown").then((mod) => mod.default)
+) as React.FC<IconCommonProps>;
+const DynamicIconArrowSquareLeft = dynamic(() =>
+    import("@/components/icons/IconArrowSquareLeft").then((mod) => mod.default)
+) as React.FC<IconCommonProps>;
 const DynamicIconClose = dynamic(() =>
     import("@/components/icons/IconClose").then((mod) => mod.default)
 ) as React.FC<IconCommonProps>;
 const DynamicIconDashboard = dynamic(() =>
     import("@/components/icons/IconDashboard").then((mod) => mod.default)
 ) as React.FC<IconCommonProps>;
+const DynamicIconEnvelope = dynamic(() =>
+    import("@/components/icons/IconEnvelope").then((mod) => mod.default)
+) as React.FC<IconCommonProps>;
 const DynamicIconLinkedIn = dynamic(() =>
     import("@/components/icons/IconLinkedIn").then((mod) => mod.default)
+) as React.FC<IconCommonProps>;
+const DynamicIconMenu = dynamic(() =>
+    import("@/components/icons/IconMenu").then((mod) => mod.default)
 ) as React.FC<IconCommonProps>;
 const DynamicIconUserSquare = dynamic(() =>
     import("@/components/icons/IconUserSquare").then((mod) => mod.default)
@@ -32,9 +53,13 @@ const IconRenders = ({ size, colorPrimary, colorSecondary }: IconCommonProps): R
     };
 
     return {
+        ArrowSquareDown: <DynamicIconArrowSquareDown {...populateProps} />,
+        ArrowSquareLeft: <DynamicIconArrowSquareLeft {...populateProps} />,
         Close: <DynamicIconClose {...populateProps} />,
         Dashboard: <DynamicIconDashboard {...populateProps} />,
+        Envelope: <DynamicIconEnvelope {...populateProps} />,
         LinkedIn: <DynamicIconLinkedIn {...populateProps} />,
+        Menu: <DynamicIconMenu {...populateProps} />,
         UserSquare: <DynamicIconUserSquare {...populateProps} />,
         Work: <DynamicIconWork {...populateProps} />,
     };

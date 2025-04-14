@@ -19,11 +19,11 @@
     }
 }
 
-@mixin make-row($gutter) {
+@mixin make-row($gutter, $row-gap: var(--section-grid-gap)) {
     display: flex;
     flex-wrap: wrap;
     margin-left: calc($gutter * -1);
-    row-gap: var(--section-grid-gap);
+    row-gap: $row-gap;
 }
 
 @mixin make-col($size, $gutter) {

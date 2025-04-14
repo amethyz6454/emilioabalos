@@ -63,6 +63,9 @@
         --color-#{$variant}-highlight: hsl(#{fn.hexToHSLLighten($color)});
     }
 
+    // title and logo
+    --app-title-color: var(--color-primary);
+
     // icon color
     --icon-primary-color: var(--color-primary);
     --icon-secondary-color: currentcolor;

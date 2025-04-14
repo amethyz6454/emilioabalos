@@ -5,8 +5,6 @@
     --section-grid-gap: var(--gap-sm);
     --section-grid-size: 50%;
 
-    padding-top: var(--section-grid-gap);
-    padding-bottom: var(--section-grid-gap);
     row-gap: var(--section-grid-gap);
 
     @include container.make-row(var(--section-grid-gap));
@@ -15,26 +13,28 @@
         --section-grid-gap: var(--gap-xl);
         --section-grid-size: var(--global-grid-columns-4);
     }
+}
 
-    > .heading {
-        @include breakpoints.media-breakpoint-up(xs) {
-            @include container.make-col(100%, var(--section-grid-gap));
-        }
-    }
-
-    > .items {
-        background-color: var(--white);
-
-        @include breakpoints.media-breakpoint-up(xs) {
-            @include container.make-col(var(--section-grid-size), var(--section-grid-gap));
-        }
+.heading {
+    @include breakpoints.media-breakpoint-up(xs) {
+        @include container.make-col(100%, var(--section-grid-gap));
     }
 }
 
-.thumbnails {
-    background-color: hsla(var(--color-mono-50-hsl), 0.25);
+.items {
+    background-color: var(--white);
+
+    @include breakpoints.media-breakpoint-up(xs) {
+        @include container.make-col(var(--section-grid-size), var(--section-grid-gap));
+    }
 
     &:hover {
-        opacity: 1;
+        .details {
+            transform: translateY(-100%);
+        }
+
+        .logos {
+            opacity: 1;
+        }
     }
 }
