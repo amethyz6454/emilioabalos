@@ -141,12 +141,12 @@ export const LOGO_PROJECTS = Object.freeze([
         thumbnail: "/projects/logos/logo-panalods.jpg",
         link: "https://www.panalods.ph/",
     },
-    {
-        id: uuidv4(),
-        title: "Infiniweb",
-        thumbnail: "/projects/logos/logo-infiniweb.jpg",
-        link: null,
-    },
+    // {
+    //     id: uuidv4(),
+    //     title: "Infiniweb",
+    //     thumbnail: "/projects/logos/logo-infiniweb.jpg",
+    //     link: null,
+    // },
 ]);
 
 export const DEV_PROJECTS = Object.freeze([
