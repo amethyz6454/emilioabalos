@@ -141,6 +141,12 @@ export const LOGO_PROJECTS = Object.freeze([
         thumbnail: "/projects/logos/logo-panalods.jpg",
         link: "https://www.panalods.ph/",
     },
+    {
+        id: uuidv4(),
+        title: "WorxSnap",
+        thumbnail: "/projects/logos/logo-worxsnap.jpg",
+        link: "https://worxsnap.com/",
+    },
     // {
     //     id: uuidv4(),
     //     title: "Infiniweb",
