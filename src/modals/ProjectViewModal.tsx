@@ -21,7 +21,7 @@ const ProjectViewModal: React.FC<ProjectViewModalProps> = ({ isOpen, onClose, pr
                 {project.thumbnail && (
                     <Image
                         alt={project.title}
-                        className="block aspect-8/5 bg-gray-100 object-contain"
+                        className="block aspect-square bg-gray-100 object-cover sm:aspect-8/5 sm:object-contain"
                         height={480}
                         quality={90}
                         src={project.thumbnail}
