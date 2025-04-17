@@ -29,7 +29,7 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                     >
                         <Image
                             alt={project.title}
-                            className="aspect-8/5 object-contain"
+                            className="aspect-8/5 h-auto w-full object-cover"
                             height={480}
                             priority={p === 0}
                             quality={90}
@@ -65,7 +65,7 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                     >
                         <Image
                             alt={project.title}
-                            className="pointer-events-none aspect-8/5 object-contain"
+                            className="aspect-8/5 h-auto w-full object-cover"
                             height={480}
                             priority={p === 0}
                             quality={90}
@@ -94,7 +94,7 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                     >
                         <Image
                             alt={project.title}
-                            className="aspect-8/5 object-cover"
+                            className="aspect-8/5 h-auto w-full object-cover"
                             height={480}
                             priority={p === 0}
                             quality={90}
@@ -122,7 +122,7 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                     >
                         <Image
                             alt={project.title}
-                            className="aspect-8/5 object-cover"
+                            className="aspect-8/5 h-auto w-full object-cover"
                             height={480}
                             priority={p === 0}
                             quality={90}
