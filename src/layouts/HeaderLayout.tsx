@@ -12,7 +12,7 @@ const HeaderLayout: React.FC = (): JSX.Element => {
     const sm = useMediaQuery("(min-width: 640px)");
 
     return (
-        <header className={classNames(HeaderStyle.header, "fixed inset-0 bottom-auto z-30 shadow-lg")}>
+        <header className={classNames(HeaderStyle.header, "fixed inset-0 bottom-auto z-39 shadow-lg")}>
             <div className={classNames(ContainerStyle.container, "flex items-center justify-between")}>
                 <Link href="/">
                     <ApplicationTitle size={sm ? 24 : 12} />

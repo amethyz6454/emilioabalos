@@ -12,7 +12,7 @@ const HeroSection: React.FC = (): JSX.Element => {
     return (
         <section
             className={classNames(
-                "relative z-39 flex h-dvh min-h-dvh grow items-center justify-center text-center",
+                "relative z-30 flex h-dvh min-h-dvh grow items-center justify-center text-center",
                 HeroStyles.section
             )}
         >
