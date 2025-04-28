@@ -15,9 +15,11 @@ const Socials: React.FC<SocialProps> = (props): JSX.Element => {
         <div className={classNames("flex", direction === "column" ? "flex-col" : "flex-row")}>
             <NavigationItem href="https://www.linkedin.com/in/emilioabalos/" title="Linked-In" target="_blank">
                 <Icon name="LinkedIn" />
+                <span>LinkedIn</span>
             </NavigationItem>
             <NavigationItem href="mailto:emilioabalos.15@gmail.com" title="Contact Me">
-                <Icon name="LinkedIn" />
+                <Icon name="Envelope" />
+                <span>Contact Me</span>
             </NavigationItem>
         </div>
     ) : (
