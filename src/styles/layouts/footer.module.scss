@@ -1,11 +1,5 @@
 @use "../mixins/breakpoints" as breakpoints;
 
 .footer {
-    // --icon-primary-color: var(--color-primary);
-
     color: var(--color-mono-950);
-
-    // a:hover {
-    //     --icon-primary-color: var(--color-primary);
-    // }
 }

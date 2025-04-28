@@ -4,6 +4,7 @@ import React, { Fragment, JSX, ReactNode, useEffect, useRef, useState } from "re
 import ReactDOM from "react-dom";
 import Button from "./Button";
 import Icon from "./Icons";
+import Backdrop from "./Backdrop";
 
 export interface ModalCommonProps {
     isOpen: boolean;
@@ -78,7 +79,7 @@ const Modal: React.FC<ModalProps> = ({
                 >
                     <div
                         ref={modalRef}
-                        className="relative flex max-h-full flex-col gap-2 bg-white p-2 shadow-lg sm:p-8"
+                        className="relative flex max-h-full flex-col gap-2 rounded-lg bg-white p-2 shadow-lg sm:p-8"
                     >
                         {isHeaderShown && (
                             <div className="flex grow-0 basis-auto items-center gap-2">
@@ -105,13 +106,7 @@ const Modal: React.FC<ModalProps> = ({
                     </div>
                 </div>
             </div>
-            <div
-                className={classNames(
-                    "fixed inset-0 z-40 bg-black/50 transition duration-150 ease-in-out",
-                    { "pointer-events-auto opacity-100": isOpen },
-                    { "pointer-events-none opacity-0": !isOpen }
-                )}
-            />
+            <Backdrop isOpen={isOpen} onClick={onClose} />
         </Fragment>
     );
 

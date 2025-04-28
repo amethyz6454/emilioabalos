@@ -13,6 +13,7 @@ interface BaseProps {
     composition?: ButtonComposition;
     disabled?: boolean;
     isFullWidth?: boolean;
+    isSharp?: boolean;
     size?: ButtonSize;
     variant?: ButtonVariant;
 }
@@ -38,6 +39,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
         disabled,
         href,
         isFullWidth = false,
+        isSharp = false,
         size = "medium",
         variant = "contained",
         ...rest
@@ -80,14 +82,14 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
 
     const buttonComposition = {
         default: {
-            small: "px-3 h-6",
-            medium: "px-5 h-9",
-            large: "px-6 h-12",
+            small: classNames("px-3 h-6", { "rounded-md": !isSharp }),
+            medium: classNames("px-5 h-9", { "rounded-md": !isSharp }),
+            large: classNames("px-6 h-12", { "rounded-md": !isSharp }),
         },
         square: {
-            small: "h-6 w-6",
-            medium: "h-10 w-10",
-            large: "h-12 w-12",
+            small: classNames("h-6 w-6", { "rounded-md": !isSharp }),
+            medium: classNames("h-10 w-10", { "rounded-md": !isSharp }),
+            large: classNames("h-12 w-12", { "rounded-md": !isSharp }),
         },
         circle: {
             small: "h-6 w-6 rounded-full",

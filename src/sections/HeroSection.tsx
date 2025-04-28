@@ -28,15 +28,16 @@ const HeroSection: React.FC = (): JSX.Element => {
                     </p>
                 </div>
                 <Socials />
+                <span className="mt-24 mb-2">See My Work</span>
                 <button
                     type="button"
-                    className="mt-24 h-8 w-8 cursor-pointer"
+                    className="inline-block h-12 w-12 cursor-pointer"
                     onClick={() => {
                         setTargetSectionId("project-section");
                         scrollToTargetSection();
                     }}
                 >
-                    <Icon name="ArrowSquareDown" size={32} />
+                    <Icon name="ArrowSquareDown" size={48} />
                 </button>
             </div>
         </section>

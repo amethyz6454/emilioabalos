@@ -1,9 +1,12 @@
-@use "../mixins/breakpoints" as mbr;
+@use "../mixins/breakpoints" as breakpoints;
 
 .wrapper {
-    // --sidebar-width: var(--spacer-80);
-    --sidebar-width: 0;
-    --main-width: calc(100% - var(--sidebar-width));
+    --sidebar-width: var(--spacer-80);
+    --main-width: 100%;
+
+    @include breakpoints.media-breakpoint-up(sm) {
+        --main-width: calc(100% - var(--sidebar-width));
+    }
 }
 
 .main {

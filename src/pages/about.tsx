@@ -5,7 +5,7 @@ import { JSX } from "react";
 
 const About: NextPage = (): JSX.Element => {
     return (
-        <MainLayout title={("About | " + process.env.NEXT_PUBLIC_APP_NAME) as string}>
+        <MainLayout title={"About | " + (process.env.NEXT_PUBLIC_APP_NAME as string)}>
             <AboutSection />
         </MainLayout>
     );

@@ -24,7 +24,10 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                 {FIGMA_PROJECTS.map((project, p) => (
                     <LinkButtonDiv
                         key={project.title}
-                        className={classNames("relative cursor-pointer overflow-hidden", ProjectsStyles.items)}
+                        className={classNames(
+                            "relative cursor-pointer overflow-hidden rounded-md",
+                            ProjectsStyles.items
+                        )}
                         onClick={() => handleSelectProject(project)}
                     >
                         <Image
@@ -60,7 +63,10 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                 {LOGO_PROJECTS.map((project, p) => (
                     <LinkButtonDiv
                         key={project.title}
-                        className={classNames("relative cursor-pointer overflow-hidden", ProjectsStyles.items)}
+                        className={classNames(
+                            "relative cursor-pointer overflow-hidden rounded-md",
+                            ProjectsStyles.items
+                        )}
                         onClick={() => handleSelectProject(project)}
                     >
                         <Image
@@ -89,7 +95,10 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                 {DEV_PROJECTS.map((project, p) => (
                     <LinkButtonDiv
                         key={project.title}
-                        className={classNames("relative cursor-pointer overflow-hidden", ProjectsStyles.items)}
+                        className={classNames(
+                            "relative cursor-pointer overflow-hidden rounded-md",
+                            ProjectsStyles.items
+                        )}
                         onClick={() => handleSelectProject(project)}
                     >
                         <Image
@@ -115,7 +124,10 @@ const ProjectsSection: React.FC = (): JSX.Element => {
                 <h4 className={classNames("pt-4 text-2xl font-bold", ProjectsStyles.heading)}>Idle Hand</h4>
                 {IH_PROJECTS.map((project, p) => (
                     <LinkButtonDiv
-                        className={classNames("relative cursor-pointer overflow-hidden", ProjectsStyles.items)}
+                        className={classNames(
+                            "relative cursor-pointer overflow-hidden rounded-md",
+                            ProjectsStyles.items
+                        )}
                         key={project.title}
                         link={project.link}
                         target={project.link ? "_black" : undefined}
