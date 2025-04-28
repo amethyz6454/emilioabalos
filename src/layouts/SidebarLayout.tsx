@@ -24,7 +24,9 @@ const SidebarLayout: React.FC = (): JSX.Element => {
             isActive: targetName === name,
             onClick: () => {
                 setTargetName(name);
-                !sm && setIsNavigationOpen(false);
+                if (!sm) {
+                    setIsNavigationOpen(false);
+                }
                 route.push(pushRoute);
             },
         };
@@ -32,10 +34,10 @@ const SidebarLayout: React.FC = (): JSX.Element => {
 
     // useEffects
     useEffect(() => {
-        if (route.pathname === "/about") {
+        if (window.location.pathname === "/about") {
             setTargetName("Milo");
         }
-    }, []);
+    }, [setTargetName]);
 
     return (
         <Fragment>

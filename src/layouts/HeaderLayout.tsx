@@ -1,7 +1,6 @@
 import ApplicationTitle from "@/components/ApplicationTitle";
 import Button from "@/components/Button";
 import IconMenu from "@/components/icons/IconMenu";
-import Socials from "@/components/Socials";
 import useMediaQuery from "@/library/hooks/useMediaQuery";
 import useNavigationStore from "@/library/stores/useNavigationStore";
 import ContainerStyle from "@/styles/components/container.module.scss";
