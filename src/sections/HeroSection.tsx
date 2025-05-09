@@ -23,7 +23,7 @@ const HeroSection: React.FC = (): JSX.Element => {
                 </h2>
                 <div className="mb-8 max-w-full sm:max-w-[60%]">
                     <p className="text-lg">
-                        Welcome to my portfolio of work. I&apos;m a Web Designer and Front-End Develop based in Genera
+                        Welcome to my portfolio of work. I&apos;m a Web Designer and Front-End Developer based in Genera
                         Trias, Cavite, Philippines.
                     </p>
                 </div>
