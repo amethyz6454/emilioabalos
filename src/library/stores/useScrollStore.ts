@@ -1,22 +1,14 @@
 import { create } from "zustand";
 
 interface ScrollStore {
-    targetSectionId: string | null;
-    setTargetSectionId: (id: string | null) => void;
-    scrollToTargetSection: () => void;
+    scrollToSection: (id: string) => void;
 }
 
-const useScrollStore = create<ScrollStore>((set, get) => ({
-    targetSectionId: null,
-    setTargetSectionId: (id) => set({ targetSectionId: id }),
-    scrollToTargetSection: () => {
-        const targetId = get().targetSectionId;
-        if (targetId) {
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-            set({ targetSectionId: null });
+const useScrollStore = create<ScrollStore>()(() => ({
+    scrollToSection: (id) => {
+        const targetElement = document.getElementById(id);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     },
 }));

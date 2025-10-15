@@ -6,8 +6,7 @@ import classNames from "classnames";
 import React, { JSX } from "react";
 
 const HeroSection: React.FC = (): JSX.Element => {
-    const setTargetSectionId = useScrollStore((state) => state.setTargetSectionId);
-    const scrollToTargetSection = useScrollStore((state) => state.scrollToTargetSection);
+    const scrollToSection = useScrollStore((state) => state.scrollToSection);
 
     return (
         <section
@@ -32,10 +31,7 @@ const HeroSection: React.FC = (): JSX.Element => {
                 <button
                     type="button"
                     className="inline-block h-12 w-12 cursor-pointer"
-                    onClick={() => {
-                        setTargetSectionId("project-section");
-                        scrollToTargetSection();
-                    }}
+                    onClick={() => scrollToSection("project-section")}
                 >
                     <Icon name="ArrowSquareDown" size={48} />
                 </button>

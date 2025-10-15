@@ -1,45 +1,28 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes, MouseEventHandler } from "react";
+import React, { ReactNode } from "react";
 
-type LinkButtonDivProps = {
-    children: React.ReactNode;
-    link?: string | null;
-    onClick?: MouseEventHandler<HTMLElement>;
+interface LinkButtonDivProps {
+    children: ReactNode;
     className?: string;
-} & (
-    | ({ link: string; onClick?: never; type?: never } & AnchorHTMLAttributes<HTMLAnchorElement>)
-    | ({
-          onClick: MouseEventHandler<HTMLButtonElement>;
-          link?: never;
-          type?: "button" | "submit" | null;
-      } & ButtonHTMLAttributes<HTMLButtonElement>)
-    | ({ link?: null; onClick?: never; type?: never } & HTMLAttributes<HTMLDivElement>)
-);
+    link?: string;
+    onClick?: () => void;
+    rel?: string;
+    target?: string;
+}
 
-const LinkButtonDiv = (props: LinkButtonDivProps) => {
-    const { link, onClick, children, ...rest } = props;
-    let type: "button" | "submit" | undefined = undefined;
-
-    if (onClick) {
-        type = props.type ?? "button";
-    }
-
+const LinkButtonDiv: React.FC<LinkButtonDivProps> = ({ link, children, ...rest }) => {
     if (link) {
         return (
-            <a href={link} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>
+            <a href={link} {...rest}>
                 {children}
             </a>
         );
     }
 
-    if (onClick) {
-        return (
-            <button onClick={onClick} type={type} {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}>
-                {children}
-            </button>
-        );
-    }
-
-    return <div {...(rest as HTMLAttributes<HTMLDivElement>)}>{children}</div>;
+    return (
+        <button type="button" {...rest}>
+            {children}
+        </button>
+    );
 };
 
 export default LinkButtonDiv;

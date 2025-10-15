@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { forwardRef, ReactNode } from "react";
+import { forwardRef, ReactNode, ElementType, MouseEvent } from "react";
 
 export type ButtonVariant = "contained" | "outlined" | "ghost" | "text";
 export type ButtonColor = "primary" | "secondary" | "tertiary";
@@ -14,16 +14,18 @@ interface BaseProps {
     disabled?: boolean;
     isFullWidth?: boolean;
     isSharp?: boolean;
+    onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
     size?: ButtonSize;
     variant?: ButtonVariant;
 }
 
 type ButtonAsButton = BaseProps &
-    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type" | "color"> & {
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> & {
         href?: undefined;
     };
 
 type ButtonAsLink = BaseProps &
+    // The `type` attribute is not applicable to links
     Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "type" | "color"> & {
         href: string;
     };
@@ -40,6 +42,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
         href,
         isFullWidth = false,
         isSharp = false,
+        onClick,
         size = "medium",
         variant = "contained",
         ...rest
@@ -107,26 +110,37 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
         className
     );
 
-    if (href) {
-        const anchorProps = rest as React.AnchorHTMLAttributes<HTMLAnchorElement>;
-        return (
-            <a href={href} ref={ref as React.Ref<HTMLAnchorElement>} className={commonClasses} {...anchorProps}>
-                {children}
-            </a>
-        );
+    const isLink = typeof href !== "undefined";
+    const Component: ElementType = isLink ? "a" : "button";
+
+    const componentProps: Record<string, any> = {
+        ...rest,
+        ref,
+        className: commonClasses,
+        onClick,
+    };
+
+    if (isLink) {
+        // It's an anchor
+        // Handle accessibility for disabled links
+        if (disabled) {
+            componentProps["aria-disabled"] = true;
+            componentProps.tabIndex = -1;
+            // Prevent navigation and onClick events on disabled links
+            componentProps.onClick = (e: MouseEvent<HTMLAnchorElement>) => {
+                e.preventDefault();
+                onClick?.(e);
+            };
+        } else {
+            componentProps.href = href;
+        }
+    } else {
+        componentProps.disabled = disabled; // It's a button
+        // Default to type="button" to prevent accidental form submissions
+        componentProps.type = (rest as ButtonAsButton).type ?? "button";
     }
 
-    const buttonProps = rest as React.ButtonHTMLAttributes<HTMLButtonElement>;
-    return (
-        <button
-            disabled={disabled}
-            ref={ref as React.Ref<HTMLButtonElement>}
-            className={commonClasses}
-            {...buttonProps}
-        >
-            {children}
-        </button>
-    );
+    return <Component {...componentProps}>{children}</Component>;
 });
 
 export default Button;

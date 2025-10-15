@@ -46,7 +46,7 @@ export const FIGMA_PROJECTS = Object.freeze([
         ],
         prototype:
             "https://www.figma.com/proto/wfy4rtVeTasn9gNiOOW30Z/In-Between-UI-Improvements?node-id=2031-759&starting-point-node-id=2031%3A759",
-        link: null,
+        link: undefined,
         isFigma: true,
         isDesign: false,
     },
@@ -77,7 +77,7 @@ export const FIGMA_PROJECTS = Object.freeze([
         ],
         prototype:
             "https://www.figma.com/proto/qds6R9PZzk8TYhIEIpyBz7/POS?node-id=117-11753&t=zWMtvR0grkIDKOuV-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=151%3A7539&show-proto-sidebar=1",
-        link: null,
+        link: undefined,
         isFigma: true,
         isDesign: false,
     },
@@ -115,7 +115,7 @@ export const FIGMA_PROJECTS = Object.freeze([
         ],
         prototype:
             "https://www.figma.com/design/IQUmubVABYiEEdp0ab1i80/WorxSnap-Components?node-id=1-2&p=f&t=M8lQ14FJnsGenUr8-0",
-        link: null,
+        link: undefined,
         isFigma: true,
         isDesign: false,
     },
@@ -132,8 +132,7 @@ export const LOGO_PROJECTS = Object.freeze([
         id: uuidv4(),
         title: "Summit Formula",
         thumbnail: "/projects/logos/logo-summit-formula.jpg",
-        // link: "https://summit-formula.com/",
-        link: null,
+        link: undefined,
     },
     {
         id: uuidv4(),
@@ -147,12 +146,6 @@ export const LOGO_PROJECTS = Object.freeze([
         thumbnail: "/projects/logos/logo-worxsnap.jpg",
         link: "https://worxsnap.com/",
     },
-    // {
-    //     id: uuidv4(),
-    //     title: "Infiniweb",
-    //     thumbnail: "/projects/logos/logo-infiniweb.jpg",
-    //     link: null,
-    // },
 ]);
 
 export const DEV_PROJECTS = Object.freeze([
@@ -199,6 +192,26 @@ export const DEV_PROJECTS = Object.freeze([
             "Update and Maintain UI.",
         ],
         link: "https://app.yeswefulfill.com/",
+    },
+    {
+        id: uuidv4(),
+        title: "Inasal Republic",
+        thumbnail: "/projects/wd-fed/wd-fed-inasal-republic.jpg",
+        contribution: [
+            "Website Design.",
+            "Front-End Development.",
+            "WordPress Implementation.",
+            "Design Custom Iconography.",
+            "Update and Maintain UI.",
+        ],
+        link: "https://inasalrepublic.ph/",
+    },
+    {
+        id: uuidv4(),
+        title: "Sandtex Technology Inc.",
+        thumbnail: "/projects/wd-fed/wd-fed-sandtex-technology-inc.jpg",
+        contribution: ["Website Design.", "Front-End Development.", "WordPress Implementation."],
+        link: "https://mediumblue-gaur-309283.hostingersite.com/",
     },
 ]);
 
