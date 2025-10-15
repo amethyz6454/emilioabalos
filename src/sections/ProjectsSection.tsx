@@ -6,7 +6,7 @@ import ContainerStyle from "@/styles/components/container.module.scss";
 import ProjectsStyles from "@/styles/sections/projects.module.scss";
 import classNames from "classnames";
 import Image from "next/image";
-import React, { JSX, ReactNode, useId } from "react";
+import React, { JSX, useId } from "react";
 
 interface ProjectItemProps {
     project: Project;

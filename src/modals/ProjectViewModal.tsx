@@ -91,7 +91,7 @@ const ProjectViewModal: React.FC<ProjectViewModalProps> = ({ isOpen, onClose, pr
 
                 {project.prototype && (
                     <div className="grid place-items-center py-8">
-                        <Button size="large" href={project.prototype} target="_blank">
+                        <Button size="large" href={project.prototype} target={"_blank"}>
                             See Prototype
                             <span className="sr-only"> (opens in a new tab)</span>
                         </Button>

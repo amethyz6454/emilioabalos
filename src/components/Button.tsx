@@ -1,39 +1,28 @@
 import classNames from "classnames";
-import { forwardRef, ReactNode, ElementType, MouseEvent } from "react";
+import React, { forwardRef, ReactNode, MouseEvent, ComponentPropsWithoutRef } from "react";
 
 export type ButtonVariant = "contained" | "outlined" | "ghost" | "text";
 export type ButtonColor = "primary" | "secondary" | "tertiary";
 export type ButtonSize = "small" | "medium" | "large";
 export type ButtonComposition = "default" | "square" | "circle";
 
-interface BaseProps {
+interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
     children: ReactNode;
     className?: string;
     color?: ButtonColor;
     composition?: ButtonComposition;
     disabled?: boolean;
+    href?: string;
     isFullWidth?: boolean;
     isSharp?: boolean;
     onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
     size?: ButtonSize;
+    target?: string;
     variant?: ButtonVariant;
 }
 
-type ButtonAsButton = BaseProps &
-    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color"> & {
-        href?: undefined;
-    };
-
-type ButtonAsLink = BaseProps &
-    // The `type` attribute is not applicable to links
-    Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "type" | "color"> & {
-        href: string;
-    };
-
-type ButtonProps = ButtonAsButton | ButtonAsLink;
-
-const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(function Button(props, ref) {
-    const {
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(function Button(
+    {
         children,
         className = "",
         color = "primary",
@@ -45,9 +34,11 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
         onClick,
         size = "medium",
         variant = "contained",
+        target,
         ...rest
-    } = props;
-
+    },
+    ref
+) {
     const buttonVariant = {
         contained: {
             primary:
@@ -111,36 +102,45 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
     );
 
     const isLink = typeof href !== "undefined";
-    const Component: ElementType = isLink ? "a" : "button";
 
-    const componentProps: Record<string, any> = {
-        ...rest,
-        ref,
-        className: commonClasses,
-        onClick,
+    const handleClick = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+        if (disabled) {
+            e.preventDefault();
+            return;
+        }
+        onClick?.(e);
     };
 
     if (isLink) {
-        // It's an anchor
-        // Handle accessibility for disabled links
-        if (disabled) {
-            componentProps["aria-disabled"] = true;
-            componentProps.tabIndex = -1;
-            // Prevent navigation and onClick events on disabled links
-            componentProps.onClick = (e: MouseEvent<HTMLAnchorElement>) => {
-                e.preventDefault();
-                onClick?.(e);
-            };
-        } else {
-            componentProps.href = href;
-        }
-    } else {
-        componentProps.disabled = disabled; // It's a button
-        // Default to type="button" to prevent accidental form submissions
-        componentProps.type = (rest as ButtonAsButton).type ?? "button";
+        const { ...linkRest } = rest as ComponentPropsWithoutRef<"a">;
+        return (
+            <a
+                {...linkRest}
+                ref={ref as React.ForwardedRef<HTMLAnchorElement>}
+                href={href}
+                className={commonClasses}
+                onClick={handleClick}
+                aria-disabled={disabled}
+                tabIndex={disabled ? -1 : undefined}
+                target={target}
+                rel={target === "_blank" ? "noopener noreferrer" : undefined}
+            >
+                {children}
+            </a>
+        );
     }
 
-    return <Component {...componentProps}>{children}</Component>;
+    return (
+        <button
+            {...rest}
+            ref={ref as React.ForwardedRef<HTMLButtonElement>}
+            className={commonClasses}
+            onClick={handleClick}
+            disabled={disabled}
+        >
+            {children}
+        </button>
+    );
 });
 
 export default Button;
