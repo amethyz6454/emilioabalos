@@ -138,7 +138,7 @@ export const LOGO_PROJECTS = Object.freeze([
         id: uuidv4(),
         title: "Panalods",
         thumbnail: "/projects/logos/logo-panalods.jpg",
-        link: "https://www.panalods.ph/",
+        link: "https://www.panalods.com/",
     },
     {
         id: uuidv4(),
