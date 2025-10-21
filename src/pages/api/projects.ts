@@ -160,7 +160,7 @@ export const DEV_PROJECTS = Object.freeze([
             "Update and Maintain UI (Current Employer).",
             "Design Custom Iconography.",
         ],
-        link: "https://www.panalods.ph/",
+        link: "https://www.panalods.com/",
     },
     {
         id: uuidv4(),
