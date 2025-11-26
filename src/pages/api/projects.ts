@@ -210,8 +210,37 @@ export const DEV_PROJECTS = Object.freeze([
         id: uuidv4(),
         title: "Sandtex Technology Inc.",
         thumbnail: "/projects/wd-fed/wd-fed-sandtex-technology-inc.jpg",
-        contribution: ["Website Design.", "Front-End Development.", "WordPress Implementation."],
-        link: "https://mediumblue-gaur-309283.hostingersite.com/",
+        contribution: [
+            "Website Design.",
+            "Front-End Development.",
+            "WordPress Implementation.",
+            "Update and Maintain UI.",
+        ],
+        link: "https://sandtex.ph/",
+    },
+    {
+        id: uuidv4(),
+        title: "Redragon Zone",
+        thumbnail: "/projects/wd-fed/wd-fed-redragon.jpg",
+        contribution: [
+            "Website Design.",
+            "Front-End Development.",
+            "WordPress Implementation.",
+            "Update and Maintain UI.",
+        ],
+        link: "https://redragonzone.ph/",
+    },
+    {
+        id: uuidv4(),
+        title: "Ad-link",
+        thumbnail: "/projects/wd-fed/wd-fed-adlink.jpg",
+        contribution: [
+            "Website Design.",
+            "Front-End Development.",
+            "WordPress Implementation.",
+            "Update and Maintain UI.",
+        ],
+        link: "https://adlink.ph/",
     },
 ]);
 
