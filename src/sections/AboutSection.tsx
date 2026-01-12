@@ -108,7 +108,7 @@ const AboutSection: React.FC = (): JSX.Element => {
                             Look me up! <Socials />
                         </h2>
                         <div>
-                            <Button href="/about/EmilioAbalos_CV.pdf" target="_blank">
+                            <Button href="/about/EmilioAbalos_CV_pro.pdf" target="_blank">
                                 Resume
                             </Button>
                         </div>
