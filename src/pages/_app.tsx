@@ -1,11 +1,8 @@
 import "@/styles/globals.scss";
 import "@/styles/root.scss";
 import type { AppProps } from "next/app";
-import { Sofia_Sans } from "next/font/google";
 import Head from "next/head";
 import { useEffect } from "react";
-
-const sofiaSans = Sofia_Sans({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
     // useEffects
@@ -21,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <style jsx global>
                 {`
                     html {
-                        font-family: ${sofiaSans.style.fontFamily};
+                        font-family: "Sofia Sans", sans-serif;
                     }
                 `}
             </style>
@@ -46,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
                 <meta name="twitter:image" content="/thumbnail.jpg" />
                 <link rel="icon" href="/app-logo.png" as="image" />
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" />
             </Head>
             <Component {...pageProps} />
         </>

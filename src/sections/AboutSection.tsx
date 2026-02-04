@@ -57,7 +57,7 @@ const AboutSection: React.FC = (): JSX.Element => {
                         <h2 className="flex gap-4 text-lg">Services</h2>
                         <p className="text-sm/5 font-light">
                             Graphic Design / Web Design / Logo Design / WordPres / Prototyping / Iconography / Figma /
-                            InDesign / Photoshop / Illustrator
+                            InDesign / Photoshop / Illustration / Front-End Development
                         </p>
 
                         <hr />
