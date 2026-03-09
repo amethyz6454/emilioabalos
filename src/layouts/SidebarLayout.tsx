@@ -34,10 +34,10 @@ const SidebarLayout: React.FC = (): JSX.Element => {
 
     // useEffects
     useEffect(() => {
-        if (window.location.pathname === "/about") {
+        if (route.pathname === "/about") {
             setTargetName("Milo");
         }
-    }, [setTargetName]);
+    }, [setTargetName, route.pathname]);
 
     return (
         <Fragment>
