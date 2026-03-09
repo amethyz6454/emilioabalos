@@ -86,6 +86,7 @@ const AboutSection: React.FC = (): JSX.Element => {
                                     Dasmariñas, Cavite, PH
                                 </p>
                             </div>
+
                             <div className="flex flex-col gap-3">
                                 <h2 className="flex gap-4 text-lg">Hobbies</h2>
                                 <p className="text-sm/5 font-light">
