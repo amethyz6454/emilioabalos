@@ -15,13 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            <style jsx global>
-                {`
-                    html {
-                        font-family: "Sofia Sans", sans-serif;
-                    }
-                `}
-            </style>
             <Head>
                 <meta
                     name="description"

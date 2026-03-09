@@ -47,6 +47,9 @@
     --color-tertiary-900: oklch(27.608% 0.05642 89.069);
     --color-tertiary-950: oklch(19.011% 0.03889 92.204);
 }
+html {
+    font-family: "Sofia Sans", sans-serif;
+}
 
 body {
     background-color: var(--color-mono-50);
