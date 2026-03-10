@@ -31,10 +31,11 @@ const AboutSection: React.FC = (): JSX.Element => {
                         <p className="text-sm/5 font-light">
                             My name is <strong>{process.env.NEXT_PUBLIC_APP_NAME as string}</strong>, a{" "}
                             <strong>Web Designer</strong> and <strong>Front-End Developer</strong> based in General
-                            Trias, Cavite, Philippines. With over 15 years of experience, I specialize in graphic
-                            design, logo creation, iconography, prototyping, custom UI frameworks, and WordPress.
-                            I&apos;m passionate about staying current with design and development trends, delivering
-                            forward-thinking and user-centric digital experiences.
+                            Trias, Cavite, Philippines. With over {new Date().getFullYear() - 2009} years of experience,
+                            I specialize in graphic design, logo creation, iconography, prototyping, custom UI
+                            frameworks, front-end development, and WordPress implementation. I&apos;m passionate about
+                            staying current with design and development trends, delivering forward-thinking and
+                            user-centric digital experiences.
                         </p>
                         {/* <p className="text-sm/5 font-light">
                             My name is <strong>{process.env.NEXT_PUBLIC_APP_NAME as string}</strong>, a{" "}
