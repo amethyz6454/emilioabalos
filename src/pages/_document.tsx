@@ -5,6 +5,7 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <style>
                     {`#appLoader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: #2a2b33; z-index: 9999; } .loader-content { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: grid; place-items: center; }`}
                 </style>

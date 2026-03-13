@@ -34,6 +34,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }): JSX.Element
             <Head>
                 <title>{title}</title>
                 <meta name="description" content={seo.description} />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href={seo.url} />
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:locale" content="en_US" />
@@ -51,8 +53,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }): JSX.Element
                 <meta name="twitter:description" content={seo.description} />
                 <meta name="twitter:url" content={seo.url} />
                 <meta name="twitter:image" content={seo.image} />
-                <meta name="twitter:site" content={seo.twitterCard} />
-                <meta name="twitter:creator" content={seo.twitterCard} />
+                <meta name="twitter:site" content={seo.twitterDescription} />
+                <meta name="twitter:creator" content={seo.twitterDescription} />
 
                 <link rel="icon" href="/app-logo.png" as="image" />
             </Head>
