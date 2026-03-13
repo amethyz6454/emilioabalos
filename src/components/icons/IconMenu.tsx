@@ -5,9 +5,10 @@ const IconMenu: React.FC<IconCommonProps> = ({
     size = 24,
     colorPrimary = "var(--icon-primary-color)",
     colorSecondary = "var(--icon-secondary-color)",
+    title = "Menu Icon",
 }): JSX.Element => {
     return (
-        <IconContainer size={size}>
+        <IconContainer size={size} title={title}>
             <path
                 d="M3 7H21"
                 stroke={colorSecondary}

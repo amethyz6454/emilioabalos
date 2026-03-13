@@ -5,9 +5,10 @@ const IconUserSquare: React.FC<IconCommonProps> = ({
     size = 24,
     colorPrimary = "var(--icon-primary-color)",
     colorSecondary = "var(--icon-secondary-color)",
+    title = "User Square Icon",
 }): JSX.Element => {
     return (
-        <IconContainer size={size}>
+        <IconContainer size={size} title={title}>
             <path
                 d="M18.14 21.62C17.26 21.88 16.22 22 15 22H8.99998C7.77998 22 6.73999 21.88 5.85999 21.62C6.07999 19.02 8.74998 16.97 12 16.97C15.25 16.97 17.92 19.02 18.14 21.62Z"
                 stroke={colorSecondary}

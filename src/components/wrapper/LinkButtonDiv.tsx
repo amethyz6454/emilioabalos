@@ -9,10 +9,16 @@ interface LinkButtonDivProps {
     target?: string;
 }
 
-const LinkButtonDiv: React.FC<LinkButtonDivProps> = ({ link, children, ...rest }) => {
+const LinkButtonDiv: React.FC<LinkButtonDivProps> = ({ link, children, target, ...rest }) => {
     if (link) {
         return (
-            <a href={link} {...rest}>
+            <a
+                href={link}
+                {...rest}
+                role="button"
+                target={target}
+                rel={target === "_blank" ? "noopener noreferrer" : undefined}
+            >
                 {children}
             </a>
         );

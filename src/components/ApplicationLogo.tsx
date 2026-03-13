@@ -10,7 +10,7 @@ const ApplicationLogo: React.FC<ApplicationLogoProps> = (props): JSX.Element => 
     const { size = 80 } = props;
 
     return (
-        <Link href="/" className="flex items-center justify-center">
+        <Link href="/" className="flex items-center justify-center" aria-label="Go to homepage">
             <Image src="/app-logo.png" height={size} width={size} alt={process.env.NEXT_PUBLIC_APP_NAME as string} />
         </Link>
     );

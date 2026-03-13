@@ -14,7 +14,7 @@ const AboutSection: React.FC = (): JSX.Element => {
                 <div className="flex flex-col items-center gap-4 sm:flex-row">
                     <div className="shrink-0 grow-0 basis-auto">
                         <Image
-                            src="/about/milo.jpg"
+                            src="/about/milo.avif"
                             height={600}
                             width={600}
                             className="overflow-hidden object-cover"

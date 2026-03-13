@@ -1,13 +1,14 @@
 import React, { JSX } from "react";
 import IconContainer, { IconCommonProps } from "./svg/IconContainer";
 
-const IconEmail: React.FC<IconCommonProps> = ({
+const IconEnvelope: React.FC<IconCommonProps> = ({
     size = 24,
     colorPrimary = "var(--icon-primary-color)",
     colorSecondary = "var(--icon-secondary-color)",
+    title = "Envelope Icon",
 }): JSX.Element => {
     return (
-        <IconContainer size={size}>
+        <IconContainer size={size} title={title}>
             <path
                 d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
                 stroke={colorSecondary}
@@ -28,4 +29,4 @@ const IconEmail: React.FC<IconCommonProps> = ({
     );
 };
 
-export default IconEmail;
+export default IconEnvelope;

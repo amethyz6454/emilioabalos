@@ -120,6 +120,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
                 href={href}
                 className={commonClasses}
                 onClick={handleClick}
+                role="button"
                 aria-disabled={disabled}
                 tabIndex={disabled ? -1 : undefined}
                 target={target}

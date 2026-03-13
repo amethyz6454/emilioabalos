@@ -31,6 +31,7 @@ const NavigationItem = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonP
                 <a
                     href={href}
                     ref={ref as React.Ref<HTMLAnchorElement>}
+                    aria-current={isActive ? "page" : undefined}
                     className={classNames(
                         NavigationStyles.nav,
                         { [NavigationStyles.active]: isActive },
@@ -51,6 +52,7 @@ const NavigationItem = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonP
                 type="button"
                 disabled={disabled}
                 ref={ref as React.Ref<HTMLButtonElement>}
+                aria-current={isActive ? "page" : undefined}
                 className={classNames(
                     NavigationStyles.nav,
                     { [NavigationStyles.active]: isActive },

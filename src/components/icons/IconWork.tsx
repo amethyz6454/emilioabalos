@@ -5,9 +5,10 @@ const IconWork: React.FC<IconCommonProps> = ({
     size = 24,
     colorPrimary = "var(--icon-primary-color)",
     colorSecondary = "var(--icon-secondary-color)",
+    title = "Work Icon",
 }): JSX.Element => {
     return (
-        <IconContainer size={size}>
+        <IconContainer size={size} title={title}>
             <path
                 d="M7.99995 22H15.9999C20.0199 22 20.7399 20.39 20.9499 18.43L21.6999 10.43C21.9699 7.99 21.2699 6 16.9999 6H6.99995C2.72995 6 2.02995 7.99 2.29995 10.43L3.04995 18.43C3.25995 20.39 3.97995 22 7.99995 22Z"
                 stroke={colorSecondary}

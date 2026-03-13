@@ -29,6 +29,7 @@ const HeaderLayout: React.FC = (): JSX.Element => {
                             composition="square"
                             size="large"
                             onClick={() => setIsNavigationOpen(true)}
+                            aria-label="Open navigation menu"
                         >
                             <IconMenu />
                         </Button>

@@ -55,6 +55,8 @@ const Modal: React.FC<ModalProps> = ({
     const lastActiveElementRef = useRef<HTMLElement | null>(null);
     const titleId = `modal-title-${React.useId()}`;
 
+    const contentId = `modal-content-${React.useId()}`;
+
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "Escape") {
@@ -122,6 +124,7 @@ const Modal: React.FC<ModalProps> = ({
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby={titleId}
+                aria-describedby={contentId}
                 tabIndex={-1}
                 className={classNames(
                     "fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto text-center transition duration-150 ease-in-out",
@@ -150,7 +153,9 @@ const Modal: React.FC<ModalProps> = ({
                                 </button>
                             </div>
                         )}
-                        <div className="grow basis-full">{children}</div>
+                        <div id={contentId} className="grow basis-full">
+                            {children}
+                        </div>
                         {isFooterShown && (
                             <div className="flex grow-0 basis-auto gap-2">
                                 {isFooterCloseButtonShow && (

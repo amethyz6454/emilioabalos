@@ -5,9 +5,10 @@ const IconClose: React.FC<IconCommonProps> = ({
     size = 24,
     colorPrimary = "var(--icon-primary-color)",
     colorSecondary = "var(--icon-secondary-color)",
+    title = "Close Icon",
 }): JSX.Element => {
     return (
-        <IconContainer size={size}>
+        <IconContainer size={size} title={title}>
             <path
                 d="M9.16998 14.83L14.83 9.17004"
                 stroke={colorPrimary}

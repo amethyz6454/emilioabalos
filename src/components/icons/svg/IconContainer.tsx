@@ -4,6 +4,7 @@ export interface IconCommonProps {
     size?: number;
     colorPrimary?: string;
     colorSecondary?: string;
+    title?: string;
 }
 
 interface IconContainerProps {
@@ -11,6 +12,7 @@ interface IconContainerProps {
     size?: number;
     viewBox?: string;
     fill?: string;
+    title: string;
 }
 
 const IconContainer: React.FC<IconContainerProps> = ({
@@ -18,9 +20,11 @@ const IconContainer: React.FC<IconContainerProps> = ({
     size = 800,
     viewBox = "0 0 24 24",
     fill = "none",
+    title,
 }): JSX.Element => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox={viewBox} fill={fill}>
+        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox={viewBox} fill={fill} role="img">
+            <title>{title}</title>
             {children}
         </svg>
     );

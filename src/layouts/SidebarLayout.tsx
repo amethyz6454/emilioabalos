@@ -41,7 +41,9 @@ const SidebarLayout: React.FC = (): JSX.Element => {
 
     return (
         <Fragment>
-            <aside
+            <nav
+                aria-label="Main navigation"
+                aria-hidden={!isNavigationOpen && !sm}
                 className={classNames(
                     "top-0 left-0 z-50 flex h-dvh min-h-dvh grow-0 flex-col shadow-2xl transition duration-150 ease-in-out sm:shadow-none",
                     { sticky: sm },
@@ -64,7 +66,7 @@ const SidebarLayout: React.FC = (): JSX.Element => {
                 <div className="grid grow-0 place-items-center">
                     <Socials direction="column" isButton />
                 </div>
-            </aside>
+            </nav>
             <Backdrop isOpen={isNavigationOpen} onClick={() => setIsNavigationOpen(false)} />
         </Fragment>
     );
