@@ -1,4 +1,4 @@
-﻿@use "sass:math";
+@use "sass:math";
 @use "sass:map";
 @use "sass:string";
 @use "sass:color";
@@ -29,7 +29,11 @@
 
     $yiq: (($r * 299) + ($g * 587) + ($b * 114)) * 0.001;
 
-    @return if($yiq >= $yiq-contrasted-threshold, $dark, $light);
+    @if $yiq >= $yiq-contrasted-threshold {
+        @return $dark;
+    } @else {
+        @return $light;
+    }
 }
 
 // Theme color functions
@@ -52,7 +56,10 @@
 // Theme color level
 @function theme-color-level($color-name: "primary", $level: 0) {
     $color: theme-color-alert($color-name);
-    $color-base: if($level > 0, $black, $white);
+    $color-base: $white;
+    @if $level > 0 {
+        $color-base: $black;
+    }
     $level: math.abs($level);
 
     @return color.mix($color-base, $color, $level * $theme-color-interval);
