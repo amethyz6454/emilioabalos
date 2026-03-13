@@ -7,7 +7,7 @@ const FooterLayout: React.FC = (): JSX.Element => {
     return (
         <footer className={cn("grid place-items-center gap-4 p-12", FooterStyles.footer)}>
             <Socials />
-            <div className="text-xs opacity-60">
+            <div className="text-xs opacity-70">
                 Copyright &copy; {new Date().getFullYear()} {process.env.NEXT_PUBLIC_APP_NAME as string}. All Rights
                 Reserved
             </div>

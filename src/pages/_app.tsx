@@ -28,8 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
     }, []);
 
     return (
-        <main className={`${sofia.variable} font-sans`}>
+        <div className={`${sofia.variable} font-sans`}>
             <Component {...pageProps} />
-        </main>
+        </div>
     );
 }

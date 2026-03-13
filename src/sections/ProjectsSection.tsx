@@ -1,7 +1,7 @@
 import LinkButtonDiv from "@/components/wrapper/LinkButtonDiv";
 import useProjectStore, { Project } from "@/library/stores/useProjectStore";
 import ProjectViewModal from "@/modals/ProjectViewModal";
-import { DEV_PROJECTS, FIGMA_PROJECTS, IH_PROJECTS, LOGO_PROJECTS } from "@/pages/api/projects";
+import { DEV_PROJECTS, FIGMA_PROJECTS, IH_PROJECTS, LOGO_PROJECTS } from "@/data/projects";
 import ContainerStyle from "@/styles/components/container.module.scss";
 import ProjectsStyles from "@/styles/sections/projects.module.scss";
 import { cn } from "@/utilities/cn";
@@ -61,7 +61,6 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, isFirst = false, onC
         <LinkButtonDiv
             className={cn("relative cursor-pointer overflow-hidden rounded-md", ProjectsStyles.items)}
             onClick={onClick ? () => onClick(project) : undefined}
-            // link={project.link ?? undefined}
             target={project.link ? "_blank" : undefined}
             rel={project.link ? "noopener noreferrer" : undefined}
         >
@@ -96,7 +95,6 @@ const ProjectCategory: React.FC<ProjectCategoryProps> = ({
                     key={project.title}
                     project={project}
                     isFirst={isFirstCategory && index === 0}
-                    // onClick={project.link ? undefined : onProjectSelect}
                     onClick={onProjectSelect}
                 />
             ))}
