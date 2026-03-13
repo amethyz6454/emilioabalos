@@ -1,16 +1,16 @@
-import React, { JSX } from "react";
-import ContainerStyle from "@/styles/components/container.module.scss";
-import AboutStyles from "@/styles/sections/about.module.scss";
-import classNames from "classnames";
-import Image from "next/image";
+import Button from "@/components/Button";
 import Icon from "@/components/Icons";
 import Socials from "@/components/Socials";
-import Button from "@/components/Button";
+import ContainerStyle from "@/styles/components/container.module.scss";
+import AboutStyles from "@/styles/sections/about.module.scss";
+import { cn } from "@/utilities/cn";
+import Image from "next/image";
+import React, { JSX } from "react";
 
 const AboutSection: React.FC = (): JSX.Element => {
     return (
         <section className={ContainerStyle.container} id="about-section">
-            <div className={classNames("flex py-12 sm:py-16", AboutStyles.about)}>
+            <div className={cn("flex py-12 sm:py-16", AboutStyles.about)}>
                 <div className="flex flex-col items-center gap-4 sm:flex-row">
                     <div className="shrink-0 grow-0 basis-auto">
                         <Image

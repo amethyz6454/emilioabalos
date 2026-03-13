@@ -1,5 +1,5 @@
-import classNames from "classnames";
-import React, { forwardRef, ReactNode, MouseEvent, ComponentPropsWithoutRef } from "react";
+import { cn } from "@/utilities/cn";
+import React, { ComponentPropsWithoutRef, forwardRef, MouseEvent, ReactNode } from "react";
 
 export type ButtonVariant = "contained" | "outlined" | "ghost" | "text";
 export type ButtonColor = "primary" | "secondary" | "tertiary";
@@ -76,14 +76,14 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
 
     const buttonComposition = {
         default: {
-            small: classNames("px-3 h-6", { "rounded-md": !isSharp }),
-            medium: classNames("px-5 h-9", { "rounded-md": !isSharp }),
-            large: classNames("px-6 h-12", { "rounded-md": !isSharp }),
+            small: cn("px-3 h-6", { "rounded-md": !isSharp }),
+            medium: cn("px-5 h-9", { "rounded-md": !isSharp }),
+            large: cn("px-6 h-12", { "rounded-md": !isSharp }),
         },
         square: {
-            small: classNames("h-6 w-6", { "rounded-md": !isSharp }),
-            medium: classNames("h-10 w-10", { "rounded-md": !isSharp }),
-            large: classNames("h-12 w-12", { "rounded-md": !isSharp }),
+            small: cn("h-6 w-6", { "rounded-md": !isSharp }),
+            medium: cn("h-10 w-10", { "rounded-md": !isSharp }),
+            large: cn("h-12 w-12", { "rounded-md": !isSharp }),
         },
         circle: {
             small: "h-6 w-6 rounded-full",
@@ -92,7 +92,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(fu
         },
     };
 
-    const commonClasses = classNames(
+    const commonClasses = cn(
         "inline-flex items-center justify-center border-2 border-solid text-xs font-semibold uppercase tracking-widest transition duration-150 ease-in-out focus:outline-none focus:ring-1 focus:ring-offset-1 cursor-pointer",
         buttonVariant[variant][color],
         buttonComposition[composition][size],

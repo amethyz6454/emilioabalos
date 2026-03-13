@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import { forwardRef, ReactNode } from "react";
 import NavigationStyles from "@/styles/layouts/partials/navigation.module.scss";
+import { cn } from "@/utilities/cn";
+import { forwardRef, ReactNode } from "react";
 
 interface BaseProps {
     children: ReactNode;
@@ -32,7 +32,7 @@ const NavigationItem = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonP
                     href={href}
                     ref={ref as React.Ref<HTMLAnchorElement>}
                     aria-current={isActive ? "page" : undefined}
-                    className={classNames(
+                    className={cn(
                         NavigationStyles.nav,
                         { [NavigationStyles.active]: isActive },
                         { [NavigationStyles.inactive]: !isActive },
@@ -53,7 +53,7 @@ const NavigationItem = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonP
                 disabled={disabled}
                 ref={ref as React.Ref<HTMLButtonElement>}
                 aria-current={isActive ? "page" : undefined}
-                className={classNames(
+                className={cn(
                     NavigationStyles.nav,
                     { [NavigationStyles.active]: isActive },
                     { [NavigationStyles.inactive]: !isActive },

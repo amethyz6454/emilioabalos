@@ -4,7 +4,7 @@ import ProjectViewModal from "@/modals/ProjectViewModal";
 import { DEV_PROJECTS, FIGMA_PROJECTS, IH_PROJECTS, LOGO_PROJECTS } from "@/pages/api/projects";
 import ContainerStyle from "@/styles/components/container.module.scss";
 import ProjectsStyles from "@/styles/sections/projects.module.scss";
-import classNames from "classnames";
+import { cn } from "@/utilities/cn";
 import Image from "next/image";
 import React, { JSX, useId } from "react";
 
@@ -30,7 +30,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, isFirst = false, onC
             )}
             {project.isFigma && project.images ? (
                 <span
-                    className={classNames(
+                    className={cn(
                         "sm-block absolute inset-0 hidden place-items-center opacity-0 backdrop-blur-xl transition-all sm:grid",
                         ProjectsStyles.logos
                     )}
@@ -46,7 +46,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, isFirst = false, onC
                 </span>
             ) : (
                 <span
-                    className={classNames(
+                    className={cn(
                         "bg-primary absolute top-full right-0 left-0 hidden place-items-center p-2 text-white transition-all sm:grid",
                         ProjectsStyles.details
                     )}
@@ -59,7 +59,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, isFirst = false, onC
 
     return (
         <LinkButtonDiv
-            className={classNames("relative cursor-pointer overflow-hidden rounded-md", ProjectsStyles.items)}
+            className={cn("relative cursor-pointer overflow-hidden rounded-md", ProjectsStyles.items)}
             onClick={onClick ? () => onClick(project) : undefined}
             // link={project.link ?? undefined}
             target={project.link ? "_blank" : undefined}
@@ -87,8 +87,8 @@ const ProjectCategory: React.FC<ProjectCategoryProps> = ({
     const headingId = useId();
 
     return (
-        <section className={classNames("flex py-12 sm:py-16", ProjectsStyles.section)} aria-labelledby={headingId}>
-            <h2 className={classNames("pt-4 text-2xl font-bold", ProjectsStyles.heading)} id={headingId}>
+        <section className={cn("flex py-12 sm:py-16", ProjectsStyles.section)} aria-labelledby={headingId}>
+            <h2 className={cn("pt-4 text-2xl font-bold", ProjectsStyles.heading)} id={headingId}>
                 {title}
             </h2>
             {projects.map((project, index) => (

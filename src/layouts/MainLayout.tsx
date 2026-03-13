@@ -1,11 +1,11 @@
 import MainStyles from "@/styles/layouts/main.module.scss";
-import classNames from "classnames";
+import { cn } from "@/utilities/cn";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { JSX } from "react";
 import FooterLayout from "./FooterLayout";
 import HeaderLayout from "./HeaderLayout";
 import SidebarLayout from "./SidebarLayout";
-import { useRouter } from "next/router";
 
 interface MainLayoutProps {
     title: string;
@@ -19,7 +19,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }): JSX.Element
     const seo = {
         title: "Emilio Abalos",
         description:
-            "Emilio Abalos's portfolio showcasing web design and front-end development projects. View my work and contact me for collaborations.",
+            "Emilio Abalos\'s portfolio showcasing web design and front-end development projects. View my work and contact me for collaborations.",
         image: `${appUrl}/thumbnail.jpg`,
         url: `${appUrl}${router.asPath}`,
         type: "website",
@@ -56,10 +56,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }): JSX.Element
 
                 <link rel="icon" href="/app-logo.png" as="image" />
             </Head>
-            <div className={classNames("flex grow", MainStyles.wrapper)}>
+            <div className={cn("flex grow", MainStyles.wrapper)}>
                 <SidebarLayout />
 
-                <main className={classNames("flex grow flex-col", MainStyles.main)}>
+                <main className={cn("flex grow flex-col", MainStyles.main)}>
                     <HeaderLayout />
                     {children}
                     <FooterLayout />

@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { cn } from "@/utilities/cn";
 import React, { JSX, KeyboardEvent, MouseEvent } from "react";
 
 interface BackdropProps {
@@ -35,7 +35,7 @@ const Backdrop: React.FC<BackdropProps> = (props): JSX.Element => {
             tabIndex={isOpen ? 0 : -1}
             onClick={onClick}
             onKeyDown={handleKeyDown}
-            className={classNames("fixed inset-0 z-40 cursor-pointer bg-black/50 transition-opacity duration-150", {
+            className={cn("fixed inset-0 z-40 cursor-pointer bg-black/50 transition-opacity duration-150", {
                 "pointer-events-auto opacity-100": isOpen,
                 "pointer-events-none opacity-0": !isOpen,
             })}

@@ -5,7 +5,7 @@ import useMediaQuery from "@/library/hooks/useMediaQuery";
 import useNavigationStore from "@/library/stores/useNavigationStore";
 import ContainerStyle from "@/styles/components/container.module.scss";
 import HeaderStyle from "@/styles/layouts/header.module.scss";
-import classNames from "classnames";
+import { cn } from "@/utilities/cn";
 import Link from "next/link";
 import React, { JSX } from "react";
 
@@ -15,8 +15,8 @@ const HeaderLayout: React.FC = (): JSX.Element => {
     const { setIsNavigationOpen } = useNavigationStore();
 
     return (
-        <header className={classNames(HeaderStyle.header, "fixed inset-0 bottom-auto z-39 flex shadow-lg sm:hidden")}>
-            <div className={classNames(ContainerStyle.container, "flex items-center justify-between")}>
+        <header className={cn(HeaderStyle.header, "fixed inset-0 bottom-auto z-39 flex shadow-lg sm:hidden")}>
+            <div className={cn(ContainerStyle.container, "flex items-center justify-between")}>
                 <Link href="/">
                     <ApplicationTitle size={sm ? 24 : 20} />
                 </Link>

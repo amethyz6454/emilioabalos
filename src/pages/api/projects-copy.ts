@@ -4,7 +4,7 @@ export const FIGMA_PROJECTS_COPY = Object.freeze([
     {
         id: uuidv4(),
         title: "In-Between",
-        thumbnail: "/projects/thumbnails/project-in-between.jpg",
+        thumbnail: "/projects/thumbnails/project-in-between.avif",
         overview:
             "For 'In-Between', an online gambling game, we undertook a project to revitalize its user experience. This involved a complete UI redesign, a new interactive chat system, and the creation of a brand mascot. The aim was to create a more engaging and user-friendly platform, improving player interaction and retention. We focused on intuitive design and real-time community features to deliver a successful gaming experience.",
         contribution: [
@@ -60,7 +60,7 @@ export const FIGMA_PROJECTS_COPY = Object.freeze([
     {
         id: uuidv4(),
         title: "Point Of Sale",
-        thumbnail: "/projects/thumbnails/project-pos.jpg",
+        thumbnail: "/projects/thumbnails/project-pos.avif",
         overview:
             "The client required a prototype for a restaurant Point of Sale (POS) system, encompassing order management and Human Resource Management (HRM) functionalities. This system was designed for internal use, with a primary focus on horizontal iPad deployment while maintaining vertical mode compatibility. The goal was to create an intuitive and efficient interface that streamlined restaurant operations.",
         contribution: [
@@ -98,7 +98,7 @@ export const FIGMA_PROJECTS_COPY = Object.freeze([
     {
         id: uuidv4(),
         title: "WorxSnap",
-        thumbnail: "/projects/thumbnails/project-worxsnap.jpg",
+        thumbnail: "/projects/thumbnails/project-worxsnap.avif",
         overview:
             "'WorxSnap' is a comprehensive Human Resource Management (HRM) service and system developed from the ground up. The client sought a sophisticated and user-friendly design, encompassing both a public-facing landing page and an internal, desktop-optimized web application. The goal was to create a seamless and intuitive experience for both potential clients and internal users, highlighting the efficiency and capabilities of the WorxSnap platform.",
         contribution: [
@@ -145,25 +145,25 @@ export const LOGO_PROJECTS_COPY = Object.freeze([
     {
         id: uuidv4(),
         title: "Crescente",
-        thumbnail: "/projects/logos/logo-crescente.jpg",
+        thumbnail: "/projects/logos/logo-crescente.avif",
         link: "https://secure.crescente.net/",
     },
     {
         id: uuidv4(),
         title: "Summit Formula",
-        thumbnail: "/projects/logos/logo-summit-formula.jpg",
+        thumbnail: "/projects/logos/logo-summit-formula.avif",
         link: "https://summit-formula.com/",
     },
     {
         id: uuidv4(),
         title: "Panalods",
-        thumbnail: "/projects/logos/logo-panalods.jpg",
+        thumbnail: "/projects/logos/logo-panalods.avif",
         link: "https://www.panalods.ph/",
     },
     {
         id: uuidv4(),
         title: "Infiniweb",
-        thumbnail: "/projects/logos/logo-infiniweb.jpg",
+        thumbnail: "/projects/logos/logo-infiniweb.avif",
         link: null,
     },
 ]);
@@ -172,25 +172,25 @@ export const DEV_PROJECTS_COPY = Object.freeze([
     {
         id: uuidv4(),
         title: "Panalods",
-        thumbnail: "/projects/wd-fed/wd-fed-panalods.jpg",
+        thumbnail: "/projects/wd-fed/wd-fed-panalods.avif",
         link: "https://www.panalods.ph/",
     },
     {
         id: uuidv4(),
         title: "Crescente",
-        thumbnail: "/projects/wd-fed/wd-fed-crescente.jpg",
+        thumbnail: "/projects/wd-fed/wd-fed-crescente.avif",
         link: "https://secure.crescente.net/",
     },
     {
         id: uuidv4(),
         title: "Orchard Road",
-        thumbnail: "/projects/wd-fed/wd-fed-orchard-road.jpg",
+        thumbnail: "/projects/wd-fed/wd-fed-orchard-road.avif",
         link: "https://greenyellow-moose-936833.hostingersite.com/",
     },
     {
         id: uuidv4(),
         title: "Yes We Fulfill",
-        thumbnail: "/projects/wd-fed/wd-fed-yes-we-fulfill.jpg",
+        thumbnail: "/projects/wd-fed/wd-fed-yes-we-fulfill.avif",
         link: "https://app.yeswefulfill.com/",
     },
 ]);

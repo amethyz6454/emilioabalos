@@ -1,13 +1,13 @@
 import Socials from "@/components/Socials";
 import FooterStyles from "@/styles/layouts/footer.module.scss";
-import classNames from "classnames";
+import { cn } from "@/utilities/cn";
 import React, { JSX } from "react";
 
 const FooterLayout: React.FC = (): JSX.Element => {
     return (
-        <footer className={classNames("grid place-items-center gap-4 p-12 text-xs opacity-25", FooterStyles.footer)}>
+        <footer className={cn("grid place-items-center gap-4 p-12", FooterStyles.footer)}>
             <Socials />
-            <div>
+            <div className="text-xs opacity-60">
                 Copyright &copy; {new Date().getFullYear()} {process.env.NEXT_PUBLIC_APP_NAME as string}. All Rights
                 Reserved
             </div>

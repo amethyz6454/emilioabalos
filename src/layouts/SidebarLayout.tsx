@@ -5,7 +5,7 @@ import Socials from "@/components/Socials";
 import useMediaQuery from "@/library/hooks/useMediaQuery";
 import useNavigationStore from "@/library/stores/useNavigationStore";
 import SidebarStyles from "@/styles/layouts/sidebar.module.scss";
-import classNames from "classnames";
+import { cn } from "@/utilities/cn";
 import { useRouter } from "next/router";
 import React, { Fragment, JSX, useEffect } from "react";
 import NavigationItem from "./partials/NavigationItem";
@@ -44,7 +44,7 @@ const SidebarLayout: React.FC = (): JSX.Element => {
             <nav
                 aria-label="Main navigation"
                 aria-hidden={!isNavigationOpen && !sm}
-                className={classNames(
+                className={cn(
                     "top-0 left-0 z-50 flex h-dvh min-h-dvh grow-0 flex-col shadow-2xl transition duration-150 ease-in-out sm:shadow-none",
                     { sticky: sm },
                     { fixed: !sm },

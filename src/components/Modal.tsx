@@ -1,10 +1,10 @@
 import ModalStyles from "@/styles/components/modal.module.scss";
-import classNames from "classnames";
+import { cn } from "@/utilities/cn";
 import React, { Fragment, JSX, ReactNode, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
+import Backdrop from "./Backdrop";
 import Button from "./Button";
 import Icon from "./Icons";
-import Backdrop from "./Backdrop";
 
 export interface ModalCommonProps {
     isOpen: boolean;
@@ -126,7 +126,7 @@ const Modal: React.FC<ModalProps> = ({
                 aria-labelledby={titleId}
                 aria-describedby={contentId}
                 tabIndex={-1}
-                className={classNames(
+                className={cn(
                     "fixed top-0 left-0 z-50 h-full w-full overflow-x-hidden overflow-y-auto text-center transition duration-150 ease-in-out",
                     isOpen ? "pointer-events-auto scale-100" : "pointer-events-none scale-0",
                     ModalStyles["modal-outer"]
