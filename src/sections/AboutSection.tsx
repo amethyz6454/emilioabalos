@@ -18,6 +18,8 @@ const AboutSection: React.FC = (): JSX.Element => {
                             height={600}
                             width={600}
                             className="overflow-hidden object-cover"
+                            fetchPriority="high"
+                            priority={true}
                             alt={process.env.NEXT_PUBLIC_APP_NAME as string}
                         />
                     </div>
