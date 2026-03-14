@@ -14,13 +14,14 @@
 }
 
 .active {
-    --icon-primary-color: var(--color-mono-950);
+    --icon-primary-color: var(--white);
+    --icon-secondary-color: var(--white);
 
     background-color: hsla(var(--color-primary-hsl), 1);
     color: var(--color-mono-50);
 
     &:hover {
-        background-color: hsla(var(--color-primary-hsl), 0.5);
+        background-color: hsla(var(--color-primary-hsl), 0.8);
     }
 }
 

@@ -1,5 +1,6 @@
 import "@/styles/globals.scss";
 import "@/styles/root.scss";
+import { cn } from "@/utilities/cn";
 import type { AppProps } from "next/app";
 import { Sofia_Sans } from "next/font/google";
 import React, { useEffect } from "react";
@@ -28,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
     }, []);
 
     return (
-        <div className={`${sofia.variable} font-sans`}>
+        <div className={cn("relative z-10 font-sans", sofia.variable)}>
             <Component {...pageProps} />
         </div>
     );

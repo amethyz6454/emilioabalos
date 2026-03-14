@@ -1,7 +1,8 @@
+import LazyLoader from "@/components/LazyLoader/LazyLoader";
 import LinkButtonDiv from "@/components/wrapper/LinkButtonDiv";
+import { DEV_PROJECTS, FIGMA_PROJECTS, IH_PROJECTS, LOGO_PROJECTS } from "@/data/projects";
 import useProjectStore, { Project } from "@/library/stores/useProjectStore";
 import ProjectViewModal from "@/modals/ProjectViewModal";
-import { DEV_PROJECTS, FIGMA_PROJECTS, IH_PROJECTS, LOGO_PROJECTS } from "@/data/projects";
 import ContainerStyle from "@/styles/components/container.module.scss";
 import ProjectsStyles from "@/styles/sections/projects.module.scss";
 import { cn } from "@/utilities/cn";
@@ -20,7 +21,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, isFirst = false, onC
             {project.thumbnail && (
                 <Image
                     alt={`Thumbnail for ${project.title}`}
-                    className="aspect-8/5 h-auto w-full object-cover"
+                    className="m-0 aspect-8/5 h-auto w-full object-cover"
                     height={480}
                     priority={isFirst}
                     quality={90}
@@ -59,7 +60,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, isFirst = false, onC
 
     return (
         <LinkButtonDiv
-            className={cn("relative cursor-pointer overflow-hidden rounded-md", ProjectsStyles.items)}
+            className="relative m-0 block cursor-pointer overflow-hidden rounded-md"
             onClick={onClick ? () => onClick(project) : undefined}
             target={project.link ? "_blank" : undefined}
             rel={project.link ? "noopener noreferrer" : undefined}
@@ -91,12 +92,12 @@ const ProjectCategory: React.FC<ProjectCategoryProps> = ({
                 {title}
             </h2>
             {projects.map((project, index) => (
-                <ProjectItem
+                <LazyLoader
                     key={project.title}
-                    project={project}
-                    isFirst={isFirstCategory && index === 0}
-                    onClick={onProjectSelect}
-                />
+                    className={cn("rounded-md transition-opacity duration-500", ProjectsStyles.items)}
+                >
+                    <ProjectItem project={project} isFirst={isFirstCategory && index === 0} onClick={onProjectSelect} />
+                </LazyLoader>
             ))}
         </section>
     );

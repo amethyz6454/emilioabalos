@@ -1,6 +1,9 @@
 @use "../mixins/breakpoints" as breakpoints;
 
 .section {
+    --icon-primary-color: var(--white);
+    --icon-secondary-color: var(--white);
+
     background-color: var(--color-mono-950);
     color: var(--color-mono-50);
 }
