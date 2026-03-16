@@ -113,8 +113,7 @@ export const FIGMA_PROJECTS = Object.freeze([
                 title: "Web Application Leave Request Modal",
             },
         ],
-        prototype:
-            "https://www.figma.com/design/IQUmubVABYiEEdp0ab1i80/WorxSnap-Components?node-id=1-2&p=f&t=M8lQ14FJnsGenUr8-0",
+        prototype: "https://www.figma.com/design/IQUmubVABYiEEdp0ab1i80/WorxSnap-Components?node-id=1843-20274&p=f",
         link: undefined,
         isFigma: true,
         isDesign: false,
